@@ -26,7 +26,7 @@ baseurl: "/strom-docs" # the subpath of your site, e.g. /blog
 url: "https://janbalanya.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
-
+permalink: /:slug
 # Build settings
 # theme: minima
 plugins:
