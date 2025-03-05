@@ -21,11 +21,10 @@
 title: Strom Docs
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Intelligent system that controls heating based on weather forecasts and electricity prices. Uses convex optimization to find cost-effective heating schedules while maintaining comfort, automatically controlling smart plugs to save energy costs.
+  Created by Daniel Villadrich, Max Balanyà Scholl & Jan Balanyà Scholl
 baseurl: "/strom-docs" # the subpath of your site, e.g. /blog
 url: "https://janbalanya.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  Bloodwing1/Strom
 permalink: /:slug
 # Build settings
 # theme: minima
