@@ -4,8 +4,6 @@ title:  "Installation"
 date:   2025-03-05 11:57:47 +0100
 categories: docs
 ---
-## Prerequisites
-
 Before you begin, ensure you have:
 
 - Python 3.8 or newer installed

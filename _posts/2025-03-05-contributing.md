@@ -4,8 +4,6 @@ title:  "Contributing"
 date:   2025-03-05 12:57:47 +0100
 categories: docs
 ---
-## Contributing
-
 Contributions to Strom are welcome! To contribute:
 1. Fork the repository
 2. Create a feature branch
