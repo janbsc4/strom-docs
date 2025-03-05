@@ -23,3 +23,10 @@ Strom consists of three main components:
 - Convex optimization for cost-effective heating decisions
 - Smart plug control via the Kasa library
 - Visualization tools for analyzing heating strategies and cost savings
+
+Before you begin, ensure you have:
+
+- Python 3.8 or newer installed
+- A TP-Link Kasa smart plug (with known IP address)
+- API keys for OpenWeatherMap and ENTSO-E
+- A network connection

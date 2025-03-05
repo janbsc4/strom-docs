@@ -4,15 +4,6 @@ title:  "Installation"
 date:   2025-03-05 11:57:47 +0100
 categories: docs
 ---
-Before you begin, ensure you have:
-
-- Python 3.8 or newer installed
-- A TP-Link Kasa smart plug (with known IP address)
-- API keys for OpenWeatherMap and ENTSO-E
-- A network connection
-
-## Installation
-
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/strom.git
