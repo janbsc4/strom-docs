@@ -1,0 +1,218 @@
+/* Import variables */
+@import "variables.css";
+
+/* Reset basic elements */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling */
+body {
+  font: var(--base-font-weight) var(--base-font-size) / var(--base-line-height) var(--base-font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: 100%; /* Ensure body stays within viewport */
+  box-sizing: border-box; /* Include padding/margins in width */
+}
+
+/* Vertical rhythm */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
+  margin-bottom: calc(var(--spacing-unit) / 2);
+  overflow-wrap: break-word; /* Add to all text elements */
+  word-wrap: break-word; /* Fallback */
+}
+
+/* Main element */
+main {
+  display: block;
+  width: 100%; /* Ensure main fits viewport */
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Figures */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: var(--small-font-size);
+}
+
+/* Lists */
+ul, ol {
+  margin-left: var(--spacing-unit);
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--base-font-weight);
+  overflow-wrap: break-word; /* Ensure headings wrap */
+  word-wrap: break-word;
+}
+
+/* Links */
+a {
+  color: var(--brand-color);
+  text-decoration: none;
+  overflow-wrap: break-word; /* Ensure links wrap */
+  word-wrap: break-word;
+}
+
+a:visited {
+  color: #1f5bb6;
+}
+
+a:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.social-media-list a:hover {
+  text-decoration: none;
+}
+
+.social-media-list a:hover .username {
+  text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+  color: var(--grey-color);
+  border-left: 4px solid var(--grey-color-light);
+  padding-left: calc(var(--spacing-unit) / 2);
+  font-size: calc(var(--base-font-size) * 1.125);
+  letter-spacing: -1px;
+  font-style: italic;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Code formatting */
+pre, code {
+  font-size: calc(var(--base-font-size) * 0.9375);
+  border: 1px solid var(--grey-color-light);
+  border-radius: 3px;
+  background-color: #eef;
+  overflow-x: auto; /* Retain horizontal scrolling for code */
+  white-space: pre-wrap; /* Wrap long lines in pre */
+  word-wrap: break-word; /* Fallback */
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box; /* Include borders/padding in width */
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+}
+
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Wrapper */
+.wrapper {
+  max-width: calc(var(--content-width) - (var(--spacing-unit) * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--spacing-unit);
+  padding-left: var(--spacing-unit);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: var(--on-laptop)) {
+  .wrapper {
+    max-width: calc(var(--content-width) - var(--spacing-unit));
+    padding-right: calc(var(--spacing-unit) / 2);
+    padding-left: calc(var(--spacing-unit) / 2);
+  }
+}
+
+@media screen and (max-width: var(--on-palm)) {
+  .wrapper {
+    padding-right: calc(var(--spacing-unit) / 4);
+    padding-left: calc(var(--spacing-unit) / 4);
+  }
+}
+
+/* Clearfix */
+.wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Icons */
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: var(--grey-color);
+  padding-right: 5px;
+  vertical-align: text-top;
+}
+
+.social-media-list li + li {
+  padding-top: 5px;
+}
+
+/* Tables */
+table {
+  margin-bottom: var(--spacing-unit);
+  width: 100%;
+  text-align: var(--table-text-align);
+  color: #404040;
+  border-collapse: collapse;
+  border: 1px solid var(--grey-color-light);
+  overflow-x: auto; /* Allow table scrolling if needed */
+}
+
+table tr:nth-child(even) {
+  background-color: #dcdcdc;
+}
+
+table th, table td {
+  padding: calc(var(--spacing-unit) / 3) calc(var(--spacing-unit) / 2);
+}
+
+table th {
+  background-color: #d9d9d9;
+  border: 1px solid #c9c9c9;
+  border-bottom-color: #bbbbbb;
+}
+
+table td {
+  border: 1px solid var(--grey-color-light);
+}

@@ -1,14 +1,19 @@
+@import "variables.css";
+@import "base.css";
+@import "layout.css";
+@import "syntax-highlighting.css";
+
+/* Custom styles */
 html { 
   height: 100%; 
-  overflow-y: scroll; /* Forces scrollbar to prevent layout shift */ 
+  overflow-y: scroll;
 }
 
-/*Landing page styling*/
 .landing {
   text-align: center;
 }
 
-.landing h1, h2 {
+.landing h1, .landing h2 {
   font-weight: bold;
 }
 
@@ -18,95 +23,86 @@ html {
 }
 
 .custom-button {
-    /* Base styles */
-    background-color: #ffd700; /* Vibrant modern yellow */
-    padding: 20px 40px; /* Even larger padding */
-    font-size: 22px; /* Bigger text */
-    font-family: 'Arial', sans-serif; /* Clean, modern font */
-    font-weight: 600; /* Slightly bold text */
-    color: #1a1a1a; /* Dark gray text for sophistication */
-    border: none; /* No border */
-    border-radius: 12px; /* Softer, modern rounded corners */
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    position: relative; /* For hover effect layering */
-    overflow: hidden; /* Contain pseudo-element effects */
-    transition: all 0.4s ease; /* Smoother, longer transition */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-    margin: 10px;
+  background-color: #ffd700;
+  padding: 20px 40px;
+  font-size: 22px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 10px;
 }
 
-/* Modern hover effects */
 .custom-button:hover {
-    background-color: #ffea00; /* Brighter yellow on hover */
-    transform: translateY(-3px); /* Slight lift effect */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-    color: #000000; /* Pure black text on hover */
+  background-color: #ffea00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #000000;
 }
-
 
 .custom2-button {
-    /* Base styles */
-    background-color: #1a1a1a; /* Deep black */
-    padding: 20px 40px; /* Large padding */
-    font-size: 22px; /* Big text */
-    font-family: 'Arial', sans-serif; /* Modern font */
-    font-weight: 600; /* Slightly bold */
-    color: #ffd700; /* Vibrant yellow text */
-    border: none;
-    border-radius: 12px; /* Soft rounded corners */
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    position: relative; /* For hover effects */
-    overflow: hidden; /* Contain ripple effect */
-    transition: all 0.4s ease; /* Smooth transition */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Darker shadow for contrast */
-    margin: 10px;
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+  font-size: 22px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  color: #ffd700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 10px;
 }
 
-/* Modern hover effects */
 .custom2-button:hover {
-    background-color: #333333; /* Lighter black/gray on hover */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-    color: #ffea00; /* Brighter yellow text on hover */
+  background-color: #333333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  color: #ffea00;
 }
-
 
 img[src="/strom-docs/assets/images/strom-hero.png"] {
-  width: 1200px; /* Replace with your image’s actual width */
+  width: 1200px;
   height: 651px;
-  max-width: 100%; /* Ensures responsiveness within $content-width (1000px) */
-  height: auto; /* Maintains aspect ratio when scaling */
-  display: block; /* Removes extra spacing below the image */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-
-
-/* Make the container use a flexbox layout */
 .content-container {
   display: flex;
-  gap: 50px; /* Increased from 20px to 40px for more spacing */
+  gap: 50px;
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box; /* Ensure container respects its own padding */
 }
 
-/* Sidebar styling */
 .sidebar {
-  width: 250px; /* Fixed width for consistency */
-  flex-shrink: 0; /* Prevents shrinking */
+  width: 250px;
+  flex-shrink: 0;
   background: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  position: sticky; /* Keeps it visible when scrolling */
-  top: 20px; /* Distance from the top */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  box-sizing: border-box; /* Include padding in width */
 }
 
-/* Sidebar content styles */
 .sidebar-content h2 {
   margin-top: 0;
   font-size: 1.2rem;
@@ -128,24 +124,26 @@ img[src="/strom-docs/assets/images/strom-hero.png"] {
 }
 
 .sidebar-content ul li a:hover {
-  color: #0073e6; /* Adds hover effect */
+  color: #0073e6;
 }
 
-/* Content section to ensure proper spacing */
 .content {
   flex: 1;
-  min-width: 0; /* Prevents flexbox issues */
+  min-width: 0;
 }
 
 @media (max-width: 768px) {
   .content-container {
     flex-direction: column;
+    padding: 0 calc(var(--spacing-unit) / 4); /* Match .wrapper’s mobile padding */
   }
 
   .sidebar {
     width: 100%;
-    position: relative; /* Remove sticky positioning */
+    position: relative;
     top: auto;
     margin-bottom: 20px;
+    padding: 15px; /* Reduce padding on mobile */
+    max-width: 100%; /* Ensure it doesn’t exceed container */
   }
 }
