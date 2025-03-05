@@ -18,8 +18,8 @@ html {
 }
 
 img[src="/strom-docs/assets/images/strom-hero.png"] {
-  width: 940px; /* Replace with your image’s actual width */
-  height: 537px; /* Replace with your image’s actual height */
+  width: 1200px; /* Replace with your image’s actual width */
+  height: 651px;
   max-width: 100%; /* Ensures responsiveness within $content-width (1000px) */
   height: auto; /* Maintains aspect ratio when scaling */
   display: block; /* Removes extra spacing below the image */
