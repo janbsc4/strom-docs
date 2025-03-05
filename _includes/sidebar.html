@@ -1,6 +1,6 @@
 <div class="sidebar-content">
   <h2>Handbook</h2>
-    <li><a href="/">Home</a></li>
+    <li><a href="{{ site.baseurl }}">Home</a></li>
     {% for post in site.posts %}
       <li><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
