@@ -17,6 +17,14 @@ html {
   font-size: 5rem;
 }
 
+img[src="/strom-docs/assets/images/strom-hero.png"] {
+  width: 940px; /* Replace with your image’s actual width */
+  height: 537px; /* Replace with your image’s actual height */
+  max-width: 100%; /* Ensures responsiveness within $content-width (1000px) */
+  height: auto; /* Maintains aspect ratio when scaling */
+  display: block; /* Removes extra spacing below the image */
+}*/
+
 /* Make the container use a flexbox layout */
 .content-container {
   display: flex;
