@@ -1,9 +1,7 @@
 <div class="sidebar-content">
-  <h2>Sidebar</h2>
-  <ul>
+  <h2>Handbook</h2>
     <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-  </ul>
+    {% for post in site.posts %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
 </div>
