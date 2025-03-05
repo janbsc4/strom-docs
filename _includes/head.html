@@ -8,6 +8,12 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  <!-- Turbo Drive -->
   <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.11/dist/turbo.es2017-umd.min.js" integrity="sha384-W9r5irrcU/3NGMyRz5PB5S/eyEznggxjg977tVsr4zjjlntKJLHa1zyFChn/lddk" crossorigin="anonymous"></script>
   <script src="{{ '/assets/js/turbo-config.js' | relative_url }}"></script>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
 </head>
