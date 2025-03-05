@@ -19,7 +19,12 @@ html {
 
 .landing h1 {
   margin-top: 7rem;
+  margin-bottom: 0;
   font-size: 5rem;
+}
+
+.landing p {
+  font-size: 1.3rem;
 }
 
 .custom-button {
