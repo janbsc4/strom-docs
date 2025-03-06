@@ -27,6 +27,15 @@ html {
   font-size: 1.3rem;
 }
 
+hr {
+  height: 0;
+  border: 0;
+  border-top: 3px dotted #333;
+  margin: 1rem 0;
+  width: 100%;
+  opacity: 0.5;
+}
+
 .custom-button {
   background-color: #ffd700;
   padding: 20px 40px;
@@ -166,4 +175,13 @@ img[src="/strom-docs/assets/images/strom-hero.png"] {
   font-size: 0.9em;
   color: var(--grey-color);
   font-style: italic;
+}
+
+.next-post-link {
+  margin-top: 2rem;
+}
+
+.next-post-link a {
+  display: inline-block;
+  padding: 0.5rem 0;
 }

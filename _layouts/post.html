@@ -23,5 +23,24 @@ layout: default
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
+  {% assign posts = site.posts | reverse %}
+  {% for post in posts %}
+    {% if post.url == page.url %}
+      {% assign post_index = forloop.index0 %}
+      {% assign next_index = post_index | plus: 1 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if next_index < posts.size %}
+    {% assign next_post = posts[next_index] %}
+    <div class="next-post-link">
+      <hr>
+      <a href="{{ site.baseurl }}{{ next_post.url }}">
+        Next: {{ next_post.title }} →
+      </a>
+    </div>
+  {% endif %}
+
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
