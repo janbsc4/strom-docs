@@ -12,7 +12,7 @@ The idea for the Strom project came from realizing the huge energy price fluctua
 </figure>
 
 ## Proof of Concept Hackathon
-Over a weekend in January 2025 we worked on the main code for Strom. We got the code to work and interact correctly with our smart plug. Despite there being a lot of room for improvement, we celebrated this first "it works" achievement.
+Over a weekend in January 2025 we worked on the main code for Strom. We got the code to work and interact correctly with the smart plug that we bought. Despite there being a lot of room for improvement, we celebrated this first "it works" achievement.
 
 ## Dedicated hardware
-In order for the code to be running, we needed an efficient piece of hardware, that could be running at all times and send updated intructions to the smart plug. This is where Le Potato V2 came into the picture.
+In order to send updated intructions to the smart plug, we needed an efficient piece of hardware, that could be running at all times. This is where Le Potato V2 came into the picture.
