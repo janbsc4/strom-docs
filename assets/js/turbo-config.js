@@ -1,32 +1,20 @@
 // /assets/js/turbo-config.js
 document.addEventListener("turbo:load", function() {
   console.log("Page loaded with Turbo!");
-  
   // This function runs whenever a new page is loaded via Turbo
-  // You can initialize any page-specific JavaScript here
 });
 
-document.addEventListener("turbo:before-render", function(event) {
-  // This runs right before Turbo replaces the page content
-  // You can use this to trigger exit animations
-  document.body.classList.add("turbo-loading");
+// Before content changes
+document.addEventListener("turbo:before-render", function() {
+  // Very minimal state change
+  document.body.classList.add("content-changing");
 });
 
+// After content changes
 document.addEventListener("turbo:render", function() {
-  // This runs after Turbo has replaced the body but before it's visible
-  // You can use this to prepare entry animations
+  // Remove the changing state
+  document.body.classList.remove("content-changing");
 });
-
-document.addEventListener("turbo:before-visit", function() {
-  // This runs when a user clicks a link but before navigation begins
-  // Good place to show loading indicators
-});
-
-document.addEventListener("turbo:visit", function() {
-  // This runs after navigation is complete
-  document.body.classList.remove("turbo-loading");
-});
-
 
 // Make forms work with Turbo
 document.addEventListener("turbo:load", function() {
@@ -69,5 +57,32 @@ document.addEventListener("turbo:load", function() {
         });
       }
     });
+  });
+});
+
+// Img loadin
+document.addEventListener("turbo:load", function() {
+  // Handle image loading
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(img => {
+    // If image is already loaded
+    if (img.complete) {
+      img.style.opacity = '1';
+    } else {
+      // Set initial state
+      img.style.opacity = '0';
+      img.style.transition = 'opacity 0.5s ease';
+      
+      // When image loads
+      img.addEventListener('load', function() {
+        img.style.opacity = '1';
+      });
+      
+      // Fallback for errors
+      img.addEventListener('error', function() {
+        img.style.opacity = '0.5'; // Semi-transparent for failed images
+      });
+    }
   });
 });
