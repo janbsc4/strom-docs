@@ -4,6 +4,9 @@ title:  "Installation"
 date:   2025-03-05 11:57:47 +0100
 categories: docs
 ---
+**Note:** This application requires **Python 3.12.8** to run properly. Please ensure you have this specific version installed on your system before proceeding with the installation steps below. Earlier or later versions may not be compatible with all dependencies or features used in this project.
+
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/strom.git
@@ -40,5 +43,5 @@ categories: docs
 Update the `device_ip` variable in `main.py` with the IP address of your Kasa smart plug:
 
 ```python
-device_ip = "192.168.1.16"  # Replace with your device's IP address
+device_ip = "192.191.1.14"  # Replace with your device's IP address
 ```
