@@ -21,7 +21,7 @@
 title: Strom Docs
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Created by Daniel Villadrich, Max Balanyà Scholl & Jan Balanyà Scholl
+  Created by Daniel Viladrich, Max Balanyà Scholl & Jan Balanyà Scholl
 baseurl: "/strom-docs" # the subpath of your site, e.g. /blog
 url: "https://janbalanya.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Bloodwing1/Strom
