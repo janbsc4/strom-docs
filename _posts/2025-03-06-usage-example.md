@@ -16,46 +16,55 @@ Over a weekend in January 2025 we worked on the main code for Strom. We got the 
 
 ## Results
 
-We modeled a house as a coupled, two component system: the indoor air inside the house its insulated wall.
+# One day Case study
 
-The rate at which the indoor temperature drops is given both by how much heat is contained in the air (its heat capacity C<sub>air</sub>) and how easy it is for the heat to get exchanged with the wall (its thermal resistance R<sub>interior</sub>). The isolated wall has its own heat capacity C<sub>wall</sub> and thermal resistance R<sub>exterior</sub>.
+We modeled a house as a coupled, two-component system: the indoor air inside the house and its insulated wall.
 
-| Parameter | Value | Units | Description |
-|-----------|-------|-------|-------------|
-| C<sub>air</sub> | 0.56 | kWh/°C | Heat capacity of indoor air |
-| C<sub>wall</sub> | 3.5 | kWh/°C | Heat capacity of insulated wall |
-| R<sub>interior</sub> | 1.0 | °C/kW | Thermal resistance between air and wall |
-| R<sub>exterior</sub> | 6.06 | °C/kW | Thermal resistance between wall and outside |
-| Q<sub>heater</sub> | 2.0 | kW | Power of the heating unit |
-| T<sub>min</sub> | 18.0 | °C | Minimum allowed indoor temperature |
-| T<sub>max</sub> | 24.0 | °C | Maximum allowed indoor temperature |
-| T<sub>indoor_init</sub> | 18.5 | °C | Initial indoor temperature |
-| T<sub>wall_init</sub> | 20.0 | °C | Initial wall temperature |
+The rate at which the indoor temperature drops depends on both the heat contained in the air (its heat capacity, `C_air`) and the ease with which heat is exchanged with the wall (its thermal resistance, `R_interior`). The isolated wall has its own heat capacity (`C_wall`) and thermal resistance (`R_exterior`).
 
+The electricity price paid by private consumers roughly follows the day-ahead market price, which can be fetched through an open API. However, it typically has a minimum cost that does not reach zero, even if the overall day-ahead price does. We include this tax floor as a variable parameter, `P_base`, in our model.
 
-Wall is thermal battery
+| Parameter              | Value | Units  | Description                                     |
+|------------------------|-------|--------|-------------------------------------------------|
+| `C_air`                | 0.56  | kWh/°C | Heat capacity of indoor air                    |
+| `C_wall`               | 3.5   | kWh/°C | Heat capacity of the insulated wall            |
+| `R_interior`           | 1.0   | °C/kW  | Thermal resistance between air and wall        |
+| `R_exterior`           | 6.06  | °C/kW  | Thermal resistance between wall and outside    |
+| `T_min`                | 18.0  | °C     | Minimum allowed indoor temperature             |
+| `T_max`                | 24.0  | °C     | Maximum allowed indoor temperature             |
+| `T_interior_init`      | 18.5  | °C     | Initial indoor temperature                     |
+| `T_wall_init`          | 20.0  | °C     | Initial wall temperature                       |
+| `Q_heater`             | 2.0   | kW     | Power of the heating unit                      |
+| `P_base`               | 0.01  | €/kWh  | Estimated base price from the provider         |
 
-Smart heating pattern can charge it 
+The wall acts as a thermal battery, and a smart heating pattern can charge it.
 
-We compare the base case constant thermostat scenario set to T<sub>min</sub> with the electricity cost optimized case. Both are restricted to operate within the temperature range of [T<sub>min</sub>, T<sub>max</sub>]. 
+We compare two scenarios: 
+1. A **base case** with a constant thermostat set to `T_min`,
+2. An **electricity cost-optimized** case, where heating is scheduled based on forecasted electricity prices. Both scenarios are restricted to operate within the temperature range of `[T_min, T_max]`.
 
 <figure class="image-container">
-  <img src="{{ site.baseurl }}assets/images/compare_costs_temps.png" alt="Comparison between our forecast aware optimal cost policy and the constant thermostat temperature policy">
-  <figcaption class="image-caption">Comparison between our forecast aware optimal cost policy and the constant thermostat temperature policy</figcaption>
+  <img src="{{ site.baseurl }}assets/images/compare_costs_temps.png" alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy on March 28th 2025">
+  <figcaption class="image-caption">Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy on March 28th 2025</figcaption>
 </figure>
 
-The graph shows us 
+The graph shows the following:
 
-- The outdoor temperature fluctuations
-- Its impact on the rate of cooling of the wall and the interior 
-- The counteracting effects of heating the home interior on the wall
-- This heats up the wall and slows down later cooling of the interior, as it falls down only to the wall's elevated afternoon temperature.
-- The cost aware choice of heating to the central portion of the day, taking advantage of the daily duck curve energy oversupply.
-- Significant cost saving of at least 10%, but with good insulation and low minimum daily price considerably lower.
+- The fluctuations in outdoor temperature.
+- Their impact on the rate of cooling of the wall and interior.
+- The counteracting effects of heating the home interior on the wall. This process heats up the wall, slowing the later cooling of the interior, as the interior temperature falls only to the wall’s elevated afternoon temperature.
+- The cost-aware strategy that heats the interior during the central portion of the day, taking advantage of the daily "duck curve" energy oversupply.
+- Significant cost savings of at least 10%, which can be further reduced with good insulation and a low minimum daily price.
+- Over long period the effect of the update period of the heating control also leads to significant gains
 
-Fixed costs of electricity (provider's taxes and tolls) matter greatly
+Additionally, we observe that **fixed costs of electricity** (such as taxes and tolls from the provider) significantly impact the overall cost.
 
+# Historical analysis for november 2024
 
+<figure class="image-container">
+  <img src="{{ site.baseurl }}assets/images/compare_costs_temps_Barcelona_Nov.png" alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during November 2024">
+  <figcaption class="image-caption">Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during November 2024</figcaption>
+</figure>
 
 
 ## Dedicated hardware
