@@ -26,7 +26,7 @@ Strom consists of three main components:
 
 Before you begin, ensure you have:
 
-- Python 3.8 or newer installed
+- Python 3.11 or newer installed
 - A TP-Link Kasa smart plug (with known IP address)
 - API keys for OpenWeatherMap and ENTSO-E
 - A network connection
