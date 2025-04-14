@@ -7,7 +7,11 @@ categories: docs
 The idea for the Strom project came from realizing the huge energy price fluctuations in Spain. Since heating has a bit of flexibility, on which time you turn it on, there is an opportunity to pick the optimal hours and lower the energy bill.
 
 <figure class="image-container">
-  <img src="{{ site.baseurl }}/assets/images/screenshot-energy-2025.PNG" alt="Screenshot of energy price fluctuation throughout a day">
+  <img
+  src="{{ site.baseurl }}/assets/images/screenshot-energy-2025.PNG"
+  alt="Screenshot of energy price fluctuation throughout a day"
+  style="width: 50%; height: auto;"
+  >
   <figcaption class="image-caption">Screenshot of the energy price fluctuation throughout a day</figcaption>
 </figure>
 
@@ -21,6 +25,8 @@ We modeled a house as a coupled, two-component system: the indoor air inside the
 The rate at which the indoor temperature drops depends on both the heat contained in the air (its heat capacity, `C_air`) and the ease with which heat is exchanged with the wall (its thermal resistance, `R_interior`). The isolated wall has its own heat capacity (`C_wall`) and thermal resistance (`R_exterior`).
 
 The electricity price paid by private consumers roughly follows the day-ahead market price, which can be fetched through an open API. However, it typically has a minimum cost that does not reach zero, even if the overall day-ahead price does. We include this tax floor as a variable parameter, `P_base`, in our model.
+
+The thermal parameters of the house were taken from Michael de Podesta's great blog post, which can be found [here](https://protonsforbreakfast.wordpress.com/2022/12/19/estimating-the-heat-capacity-of-my-house/).
 
 | Parameter              | Value | Units  | Description                                     |
 |------------------------|-------|--------|-------------------------------------------------|
@@ -49,7 +55,11 @@ We coose a series of illustrative historical timeframes to show the properties o
 ### 25th of November
 
 <figure class="image-container">
-  <img src="{{ site.baseurl }}/assets/images/compare_costs_temps_Barcelona_25th_Nov.png" alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy on November 25th 2024">
+  <img
+  src="{{ site.baseurl }}/assets/images/compare_costs_temps_Barcelona_25th_Nov.png"
+  alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy on November 25th 2024"
+  style="width: 100%; height: auto;"
+  >
   <figcaption class="image-caption">Historical Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy on the 25th of November 2024</figcaption>
 </figure>
 
@@ -66,7 +76,11 @@ Once the heater is turned off, the interior temperature rapidly decreases to mat
 During November 2024, we observed spikes in indoor temperature, though not limited by T_max, the upper part of the comfort zone. The system follows the expected T_min at higher energy prices like the baseline policy, which is sound cost-wise as well. The largest spike occurred on the 25th of November, a day of exceedingly low energy prices for a prolonged period of time.
 
 <figure class="image-container">
-  <img src="{{ site.baseurl }}/assets/images/compare_costs_temps_Barcelona_Nov.png" alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during November 2024">
+  <img
+  src="{{ site.baseurl }}/assets/images/compare_costs_temps_Barcelona_Nov.png"
+  alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during November 2024"
+  style="width: 100%; height: auto;"
+  >
   <figcaption class="image-caption">Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during the second half of November 2024</figcaption>
 </figure>
 
@@ -81,7 +95,11 @@ The largest differences in daily cost between the baseline policy and the cost-o
 Temperature of the optimal model has many spikes as shown in the previous graphs, but they always contribute to making the temperature more comfortable in the winter and summer. The cumulative difference over the two-year period was 66€, 17% relative to the total cost of the base policy.
 
 <figure class="image-container">
-  <img src="{{ site.baseurl }}/assets/images/compare_costs_temps_Barcelona_Mar23_Mar25.png" alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during from March 2023 through to March 2025">
+  <img 
+  src="{{ site.baseurl }}/assets/images/compare_costs_temps_Barcelona_Mar23_Mar25.png" 
+  alt="Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during from March 2023 through to March 2025"
+  style="width: 100%; height: auto;"
+  >
   <figcaption class="image-caption">Comparison between our forecast-aware optimal cost policy and the constant thermostat temperature policy during the two year period from March 2023 and March 2025.</figcaption>
 </figure>
 
