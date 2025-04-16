@@ -170,7 +170,6 @@ img[src="/strom-docs/assets/images/strom-hero.png"] {
   height: auto;
 }
 
-
 .image-caption {
   margin-top: 10px;
   font-size: 0.9em;
@@ -186,4 +185,120 @@ img[src="/strom-docs/assets/images/strom-hero.png"] {
 .next-post-link a {
   display: inline-block;
   padding: 0.5rem 0;
+}
+
+.hero-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.hero-section img {
+  width: auto;
+  max-width: 100%;
+  height: 30vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.hero-section h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  margin: 0;
+  line-height: 1;
+}
+
+.hero-section h2 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin: 0.25rem 0;
+}
+
+.hero-section p {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  max-width: 800px;
+  margin: 1rem auto;
+  line-height: 1.4;
+  padding: 0 1rem;
+}
+
+.button-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.custom-button, .custom2-button {
+  padding: 12px 30px;
+  font-size: 18px;
+  min-width: 140px;
+  margin: 0;
+}
+
+@media (max-height: 600px) {
+  .hero-section {
+    padding: 1rem;
+    gap: 0.75rem;
+    min-height: auto;
+  }
+  
+  .hero-section img {
+    height: 25vh;
+  }
+  
+  .hero-section h1 {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+  
+  .hero-section p {
+    margin: 0.5rem auto;
+    line-height: 1.3;
+  }
+  
+  .button-container {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1rem;
+    gap: 1rem;
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .custom-button, .custom2-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0.5rem;
+  }
+  
+  .hero-section img {
+    max-height: 30vh;
+  }
 }
