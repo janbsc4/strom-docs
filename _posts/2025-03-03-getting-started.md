@@ -28,5 +28,5 @@ Before you begin, ensure you have:
 
 - Python 3.11 or newer installed
 - A TP-Link Kasa smart plug (with known IP address)
-- API keys for OpenWeatherMap and ENTSO-E
+- API keys for [OpenWeather](https://openweathermap.org/appid) and [ENTSO-E](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide_prod_backup_06_11_2024.html#_authentication_and_authorisation)
 - A network connection
