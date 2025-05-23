@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Usage Example"
-date:   2025-03-06 09:57:47 +0100
+date:   2025-03-08 09:57:47 +0100
 categories: docs
 --- 
 The idea for the Strom project came from realizing the huge energy price fluctuations in Spain. Since heating has a bit of flexibility, on which time you turn it on, there is an opportunity to pick the optimal hours and lower the energy bill.
