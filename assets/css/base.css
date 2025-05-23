@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   word-wrap: break-word; /* Fallback */
 }
 
+p, blockquote, pre, ul, ol, dl, figure {
+  margin-bottom: var(--spacing-unit);
+}
+
 /* Main element */
 main {
   display: block;
@@ -67,15 +71,37 @@ li > ol {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--base-font-weight);
-  overflow-wrap: break-word; /* Ensure headings wrap */
-  word-wrap: break-word;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: calc(var(--spacing-unit) * 1.5);
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
 }
 
 /* Links */
 a {
   color: var(--brand-color);
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
   overflow-wrap: break-word; /* Ensure links wrap */
   word-wrap: break-word;
 }
@@ -85,8 +111,8 @@ a:visited {
 }
 
 a:hover {
-  color: var(--text-color);
-  text-decoration: underline;
+  border-bottom-color: currentColor;
+  text-decoration: none;
 }
 
 .social-media-list a:hover {
@@ -115,29 +141,33 @@ blockquote > :last-child {
 
 /* Code formatting */
 pre, code {
-  font-size: calc(var(--base-font-size) * 0.9375);
+  font-size: calc(var(--base-font-size) * 0.95);
   border: 1px solid var(--grey-color-light);
-  border-radius: 3px;
-  background-color: #eef;
-  overflow-x: auto; /* Retain horizontal scrolling for code */
-  white-space: pre-wrap; /* Wrap long lines in pre */
-  word-wrap: break-word; /* Fallback */
-  max-width: 100%; /* Prevent overflow */
-  box-sizing: border-box; /* Include borders/padding in width */
+  border-radius: 6px;
+  background-color: #f8fafc;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.6;
 }
 
 code {
-  padding: 1px 5px;
+  padding: 2px 6px;
+  color: #374151;
 }
 
 pre {
-  padding: 8px 12px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
 }
 
 pre > code {
   border: 0;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 0.925rem;
+  color: #334155;
 }
 
 /* Wrapper */
