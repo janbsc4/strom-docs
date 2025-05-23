@@ -73,6 +73,7 @@ hr {
 }
 
 .sidebar {
+  list-style: none;
   width: 220px;
   flex-shrink: 0;
   position: sticky;
@@ -92,7 +93,6 @@ hr {
 }
 
 .sidebar-content ul {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
