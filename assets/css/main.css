@@ -9,23 +9,7 @@ html {
   overflow-y: scroll;
 }
 
-.landing {
-  text-align: center;
-}
-
-.landing h1, .landing h2 {
-  font-weight: bold;
-}
-
-.landing h1 {
-  margin-top: 7rem;
-  margin-bottom: 0;
-  font-size: 5rem;
-}
-
-.landing p {
-  font-size: 1.3rem;
-}
+/* Landing page styles moved to .hero-section */
 
 hr {
   height: 0;
@@ -36,66 +20,47 @@ hr {
   opacity: 0.5;
 }
 
-.custom-button {
-  background-color: #ffd700;
-  padding: 20px 40px;
-  font-size: 22px;
-  font-family: 'Arial', sans-serif;
+.custom-button, .custom2-button {
+  padding: 12px 30px;
+  font-size: 18px;
+  font-family: var(--base-font-family, 'Arial', sans-serif);
   font-weight: 600;
-  color: #1a1a1a;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  margin: 10px;
-  margin-top: 2rem;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  margin: 0;
+}
+
+.custom-button {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .custom-button:hover {
   background-color: #ffea00;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .custom2-button {
   background-color: #1a1a1a;
-  padding: 20px 40px;
-  font-size: 22px;
-  font-family: 'Arial', sans-serif;
-  font-weight: 600;
   color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  margin: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .custom2-button:hover {
   background-color: #333333;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   color: #ffea00;
 }
 
-img[src="/strom-docs/assets/images/strom-hero.png"] {
-  width: 1200px;
-  height: 651px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+/* Hero image styles moved to .hero-section img */
 
 .content-container {
   display: flex;
@@ -188,117 +153,123 @@ img[src="/strom-docs/assets/images/strom-hero.png"] {
 }
 
 .hero-section {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3.5rem 2rem;
   text-align: center;
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .hero-section img {
   width: auto;
   max-width: 100%;
-  height: 30vh;
+  height: 20vh;
+  min-height: 130px;
+  max-height: 180px;
   object-fit: contain;
   margin: 0 auto;
   display: block;
 }
 
 .hero-section h1 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
   margin: 0;
-  line-height: 1;
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .hero-section h2 {
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
-  margin: 0.25rem 0;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  margin: 0.4rem 0 0;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #4a5568;
+  text-transform: uppercase;
 }
 
 .hero-section p {
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-  max-width: 800px;
-  margin: 1rem auto;
-  line-height: 1.4;
-  padding: 0 1rem;
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  max-width: 640px;
+  margin: 0.5rem auto;
+  line-height: 1.6;
+  padding: 0;
+  color: #2d3748;
+  font-weight: 400;
 }
 
 .button-container {
-  margin: 1rem 0;
+  margin: 0.8rem 0 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .custom-button, .custom2-button {
-  padding: 12px 30px;
-  font-size: 18px;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
   min-width: 140px;
   margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
 }
 
-@media (max-height: 600px) {
+@media (max-height: 800px) {
   .hero-section {
-    padding: 1rem;
-    gap: 0.75rem;
-    min-height: auto;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
   }
   
   .hero-section img {
-    height: 25vh;
-  }
-  
-  .hero-section h1 {
-    font-size: clamp(2rem, 4vw, 4rem);
+    height: 18vh;
+    min-height: 120px;
+    margin: 0.5rem auto;
   }
   
   .hero-section p {
+    font-size: 1.05rem;
+    line-height: 1.6;
     margin: 0.5rem auto;
-    line-height: 1.3;
   }
   
   .button-container {
-    margin: 0.5rem 0;
+    margin-top: 1rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .hero-section {
-    padding: 1rem;
+    padding: 2rem 1rem;
     gap: 1rem;
-    min-height: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  }
+  
+  .hero-section h1 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
   }
   
   .button-container {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .custom-button, .custom2-button {
     width: 100%;
-    max-width: 300px;
-    margin: 0.5rem 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 0.5rem;
-  }
-  
-  .hero-section img {
-    max-height: 30vh;
+    max-width: 280px;
+    padding: 0.875rem 2rem;
   }
 }
