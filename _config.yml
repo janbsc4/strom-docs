@@ -54,8 +54,8 @@ plugins:
 
 # Exclude from processing.
 # Repo files that are not site content, so they are not published to the site.
-# A custom exclude list replaces Jekyll's built-in defaults, so Gemfile entries
-# must be repeated here.
+# A custom exclude list replaces Jekyll's built-in defaults, so the default
+# entries (Gemfile, vendor/) must be repeated here.
 exclude:
   - AGENTS.md
   - README.md
@@ -63,3 +63,8 @@ exclude:
   - script
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
