@@ -15,18 +15,18 @@
 {%- if page.ref -%}
   {%- assign candidates = site.posts | where: "ref", page.ref | where: "lang", other_lang -%}
   {%- assign alt_url = candidates.first.url -%}
-  {%- if alt_url == blank -%}
+  {%- unless alt_url -%}
     {%- assign candidates = site.html_pages | where: "ref", page.ref | where: "lang", other_lang -%}
     {%- assign alt_url = candidates.first.url -%}
-  {%- endif -%}
+  {%- endunless -%}
 {%- endif -%}
-{%- if alt_url == blank -%}
+{%- unless alt_url -%}
   {%- if my_lang == "es" -%}
     {%- assign alt_url = "/" -%}
   {%- else -%}
     {%- assign alt_url = "/es/" -%}
   {%- endif -%}
-{%- endif -%}
+{%- endunless -%}
 {%- if my_lang == "es" -%}
   {%- assign docs_url = "/es/primeros-pasos" -%}
 {%- else -%}
