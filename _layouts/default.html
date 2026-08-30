@@ -5,16 +5,19 @@
 
   <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content" aria-label="Content" id="main">
       <div class="wrapper">
-      <div class="content-container">
-        <aside class="sidebar">
-          {%- include sidebar.html -%}
-        </aside>
-        <div class="content">
-          {{ content }}
+        <div class="content-container">
+          {%- unless page.no_sidebar -%}
+            {%- include sidebar.html -%}
+          {%- endunless -%}
+          <div class="content">
+            {{ content }}
+          </div>
         </div>
       </div>
     </main>

@@ -2,17 +2,16 @@
 layout: page
 title: About
 permalink: /about/
+no_sidebar: true
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This site documents [Strom](https://github.com/Bloodwing1/Strom), a free,
+open-source script that heats your home when electricity is cheap.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Strom was created by Daniel Viladrich, Max Balanyà Scholl &amp;
+[Jan Balanyà Scholl](https://janbalanya.com). It grew out of a weekend hackathon
+in January 2025 and is developed in the open — contributions are welcome on
+[GitHub](https://github.com/Bloodwing1/Strom).
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Start with the [guide]({{ site.baseurl }}/getting-started), or jump straight to
+the source.
