@@ -3,6 +3,8 @@ layout: post
 title:  "Configuration"
 date:   2025-03-05 11:00:00 +0100
 categories: docs
+lang: en
+ref: configuration
 ---
 Strom reads all personal settings from a single **config folder**: API keys, smart plug credentials and (optionally) your house parameters. Everything is validated at startup, before any network call or device operation, so mistakes surface immediately with an actionable error.
 

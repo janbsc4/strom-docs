@@ -30,12 +30,22 @@ url: "https://janbalanya.com" # the base hostname & protocol for your site, e.g.
 github_username:  Bloodwing1/Strom
 permalink: /:slug
 
-# Social card for every page unless a page overrides it
+# Social card for every page unless a page overrides it.
+# English guide posts live in _posts/ (lang: en, URLs /:slug).
+# Spanish guide posts live in _posts/es/ (lang: es, URLs /es/:slug).
+# Each post/page carries a `ref` id linking its translations together.
 defaults:
   - scope:
       path: ""
     values:
       image: /assets/images/og-image.png
+  - scope:
+      path: "_posts/es"
+      type: posts
+    values:
+      lang: es
+      permalink: /es/:slug
+      image: /assets/images/og-image-es.png
 
 # Build settings
 # theme: minima

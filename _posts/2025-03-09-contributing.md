@@ -3,6 +3,8 @@ layout: post
 title:  "Contributing"
 date:   2025-03-09 12:57:47 +0100
 categories: docs
+lang: en
+ref: contributing
 ---
 Contributions to Strom are welcome! Please first open an issue to discuss the idea/change you have in mind.
 
