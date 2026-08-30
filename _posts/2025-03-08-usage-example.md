@@ -16,7 +16,7 @@ The idea for the Strom project came from realizing the huge energy price fluctua
 </figure>
 
 ## Proof of Concept Hackathon
-Over a weekend in January 2025 we worked on the main code for Strom. We got the code to work and interact correctly with the smart plug that we bought. Despite there being a lot of room for improvement, we celebrated this first "minimum viable setup" achievement. To iterate on
+Over a weekend in January 2025 we worked on the main code for Strom. We got the code to work and interact correctly with the smart plug that we bought. Despite there being a lot of room for improvement, we celebrated this first "minimum viable setup" achievement.
 
 # Case study
 
@@ -37,9 +37,11 @@ The thermal parameters of the house were taken from Michael de Podesta's great b
 | `T_min`                | 18.0  | °C     | Minimum allowed indoor temperature             |
 | `T_max`                | 24.0  | °C     | Maximum allowed indoor temperature             |
 | `T_interior_init`      | 18.5  | °C     | Initial indoor temperature                     |
-| `T_wall_init`          | 20.0  | °C     | Initial wall temperature                       |
+| `T_wall_init`          | 18.5  | °C     | Initial wall temperature                       |
 | `Q_heater`             | 2.0   | kW     | Power of the heating unit                      |
+| `Q_cooling`            | 2.0   | kW     | Power of the cooling unit                      |
 | `P_base`               | 0.01  | €/kWh  | Estimated base price from the provider         |
+| `freq`                 | 5min  | —      | Resolution of the simulation                   |
 
 The wall acts as a thermal battery, and a smart heating pattern can charge it.
 
@@ -47,7 +49,7 @@ We compare two scenarios:
 1. A **base case** with a constant thermostat set to the target temperature `T_target`. This is calculated as the weekly average temperature and clipped to be within the comfort temperature
 2. An **electricity cost-optimized** case, where heating is scheduled based on forecasted electricity prices. Both scenarios are restricted to operate within the temperature range of `[T_min, T_max]`.
 
-We coose a series of illustrative historical timeframes to show the properties of the optimized policy.
+We choose a series of illustrative historical timeframes to show the properties of the optimized policy. The plots below can be reproduced with the scripts in the `case_study/` folder of the repository.
 
 ## Historical analysis 
 
@@ -112,4 +114,5 @@ The model still lacks some additions to make it more realistic. We did not incor
 Even at this level of detail, a factor analysis would be interesting to map out the potential savings from this method depending on location and thermal parameters.
 
 ### Dedicated hardware
-In order to reliably send updated instructions to the smart plug, we plan to containerize our implementation to make it executable on low-end hardware for home assistants.
+
+The current roadmap (see the repository README) is a cron job installer and a standalone executable, so Strom can run unattended on low-end hardware for home assistants.

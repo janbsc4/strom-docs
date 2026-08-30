@@ -11,7 +11,20 @@ After that you can propose changes by:
 2. Create a feature branch
 3. Submit a pull request with a clear description of your changes
 
+## Development setup
 
+```bash
+git clone https://github.com/Bloodwing1/Strom.git
+cd Strom
+mise run install   # creates the venv, installs Strom with dev tooling, sets up git hooks
+```
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+If you don't use [mise](https://mise.jdx.dev/): create a Python 3.12.8 virtual environment and run `pip install -e ".[dev]"`.
+
+The most useful commands (all defined in `.mise.toml`):
+
+- `mise run check` — lint, type-check and deterministic tests; this is what CI blocks on
+- `mise run test-integration` — live provider canaries (requires API keys)
+- `mise run mutation` — mutation testing of the safety-critical modules (slow)
+
+Git hooks (via [husky](https://typicode.github.io/husky/)) run the linter on commit and the full check on push; enable them with `mise run hooks`. The tests in `tests/` run without network access or API keys, so they are safe to run locally at any time.

@@ -4,65 +4,57 @@ title:  "Customization"
 date:   2025-03-07 11:57:47 +0100
 categories: docs
 ---
-Strom API calls can be adjusted so that it works for a city of your choice.
+Strom ships with defaults for Barcelona and Spain, but every input can be adjusted: your city, your price zone and your house.
 
-### Weather Location
+## Weather location
 
-To change the location for weather data:
-1. Modify the city parameter (YourCity) in the API call in `get_weather_data()`:
-   ```python
-   call_str = "https://api.openweathermap.org/data/2.5/forecast?q=YourCity&appid=" + API_KEY
-   ```
+Weather comes from the OpenWeatherMap forecast API. The city is the first argument of `get_weather_data`, passed as the `q` query parameter:
 
-### Electricity Price Country
+```python
+from strom import get_weather_data
 
-To change the country for electricity prices:
-1. Modify the country code in `get_prices()`:
-   ```python
-   country_code = 'XX'  # Replace with your country code
-   ```
+weather = get_weather_data(city="Madrid, ES")
+```
 
-### Scheduling
+Example formats: `"Barcelona, ES"`, `"Madrid, ES"`, `"Berlin, DE"`, `"Paris, FR"`, `"London, GB"`, `"Rome, IT"` — any string the OpenWeatherMap API accepts for its `q` parameter works.
 
-For automated operation, consider setting up a cron job (Linux/Mac) or Task Scheduler (Windows) to run `main.py` at regular intervals. Our recommended cadence is once an hour.
+## Electricity price zone
 
+Prices come from the ENTSO-E transparency platform, which serves day-ahead prices per bidding zone. The zone defaults to `"ES"` (Spain):
 
-## Further Details
+```python
+from strom import get_price_series
 
-### Data Collection
+prices = get_price_series(zone="ES")
+```
 
-Weather data is fetched from OpenWeatherMap for Barcelona by default. The system:
-- Gets 3-hour forecast data
-- Interpolates to create hourly temperature forecasts
-- Converts temperatures from Kelvin to Celsius
+## House parameters
 
-Price data is fetched from ENTSO-E for Spain by default. The system:
-- Gets day-ahead market prices
-- Converts prices to €/kWh
-- Aligns timestamps with weather data
+The thermal model of your house — heat capacities, insulation, heater power, comfort bounds and more — is configured through `house_config.json`. See [Configuration]({{ site.baseurl }}/configuration) for the full parameter table and the validation rules.
 
-### Optimization Logic
+## Optimization modes
 
-The optimization uses convex programming (via CVXPY) to determine when to heat based on:
+The optimizer (`find_heating_output`) runs in two modes:
 
-1. **Objective Function**: Minimize electricity cost while maintaining comfort
-2. **Constraints**:
-   - Indoor temperature must stay above minimum threshold
-   - Thermal dynamics model (heating power, heat loss rate)
-   - Initial temperature conditions
+- **`optimal`** minimizes the electricity cost while keeping the indoor temperature within `[T_min, T_max]`. This is what a normal run uses.
+- **`baseline`** tracks a comfort target (a smoothed 24-hour average of the outdoor temperature, clipped to the comfort band) with a small cost term. It mimics a plain thermostat and exists as the reference strategy for comparison.
 
-The optimization can run in two decision modes:
-- **Relaxed**: Allows continuous values between 0-1 (partial heating)
-- **Discrete**: Binary decisions (on/off)
+`compare_output_costs` runs both modes on the same data and returns both schedules, which is what the cost comparisons in the [usage example]({{ site.baseurl }}/usage-example) are built on.
 
-And two optimization types:
-- **Optimal**: Minimize monetary cost
-- **Baseline**: Minimize temperature deviation from target
+Both modes solve a convex optimization problem, so the solver returns a provably cheapest (or best-tracking) schedule rather than a heuristic guess.
 
-### Thermal Model
+## How data is handled
 
-The system models building thermal dynamics with these parameters:
+Strom never invents data:
 
-- `heat_loss`: Rate at which the building loses heat to the outdoors (°C/hr per °C difference)
-- `heating_power`: Rate at which the heater can increase indoor temperature (°C/hr)
-- `min_temperature`: Minimum acceptable indoor temperature (°C)
+- Weather observations (3-hourly from OpenWeatherMap) are linearly interpolated to hourly values, but only where a real observation is within 3 hours; larger gaps raise a `CoverageError`.
+- Prices are never interpolated. Each price belongs to its exact market interval; an unpublished interval reuses the previous price for at most 1 hour, then the run stops.
+- All timestamps are handled in UTC internally, so results are consistent across daylight-saving transitions.
+
+## How the plug is driven
+
+A smart plug can only be ON or OFF, but the optimizer produces fractional values between 0 and 1. Strom bridges the gap with a **duty cycle**: within each control interval, the plug is ON for exactly the fraction the optimizer requested, then OFF. On-times shorter than 60 seconds are rounded up so the relay is not chattered, and a watchdog independent of the optimizer forces the plug OFF after 3 hours of continuous ON time as a safety net.
+
+## Scheduling
+
+For automated operation, run `strom` at regular intervals — the recommended cadence is once an hour. See [Usage]({{ site.baseurl }}/usage#scheduling-runs) for a cron example.
