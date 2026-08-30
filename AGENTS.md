@@ -31,6 +31,15 @@ as it exists now.
 - The build uses the `github-pages` gem, so only its whitelisted plugins are
   available.
 
+## Checks
+
+CI (`.github/workflows/ci.yml`) runs `script/check` on every push and pull
+request: front matter and translation-pairing checks (`script/check-front-matter`),
+a strict `jekyll build`, and html-proofer over the built site. Run
+`script/check` locally before committing content or template changes. A page
+rendering in `jekyll serve` does not catch a renamed slug, a future-dated post,
+or a dead language-switch link.
+
 ## Preview
 
 ```sh

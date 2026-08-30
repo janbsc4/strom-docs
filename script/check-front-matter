@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "yaml"
+require "time"
+
+POSTS_DIR = File.expand_path("../_posts", __dir__)
+FILENAME_RE = /\A\d{4}-\d{2}-\d{2}-.+\.md\z/
+
+def front_matter_of(path)
+  content = File.read(path)
+  match = content.match(/\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\z)/m)
+  return [nil, "no front matter"] unless match
+  data = YAML.safe_load(match[1], permitted_classes: [Date, Time, DateTime])
+  return [nil, "front matter is not a mapping"] unless data.is_a?(Hash)
+  [data, nil]
+rescue Psych::SyntaxError => e
+  [nil, "invalid YAML: #{e.message}"]
+end
+
+def date_of(value)
+  case value
+  when Time then value
+  when Date, DateTime then value.to_time
+  when String then Time.parse(value)
+  end
+rescue ArgumentError
+  nil
+end
+
+errors = []
+refs = { "en" => {}, "es" => {} }
+slugs = { "en" => {}, "es" => {} }
+posts = Dir.glob(File.join(POSTS_DIR, "**", "*.md")).sort
+
+abort "check-front-matter: no posts found under _posts/" if posts.empty?
+
+posts.each do |path|
+  rel = path.delete_prefix("#{POSTS_DIR}/")
+  lang = rel.start_with?("es/") ? "es" : "en"
+  name = File.basename(path)
+
+  errors << "#{rel}: file name is not YYYY-MM-DD-slug.md" unless name.match?(FILENAME_RE)
+
+  fm, problem = front_matter_of(path)
+  if problem
+    errors << "#{rel}: #{problem}"
+    next
+  end
+
+  errors << "#{rel}: layout must be \"post\" (got #{fm["layout"].inspect})" unless fm["layout"] == "post"
+
+  title = fm["title"]
+  errors << "#{rel}: missing a title" unless title.is_a?(String) && !title.strip.empty?
+
+  date = date_of(fm["date"])
+  if date.nil?
+    errors << "#{rel}: missing or unparseable date"
+  elsif date > Time.now
+    errors << "#{rel}: date #{date} is in the future, Jekyll silently hides future-dated posts"
+  end
+
+  errors << "#{rel}: categories must include \"docs\"" unless Array(fm["categories"]).include?("docs")
+
+  errors << "#{rel}: lang must be \"#{lang}\" (got #{fm["lang"].inspect})" unless fm["lang"] == lang
+
+  ref = fm["ref"]
+  unless ref.is_a?(String) && !ref.strip.empty?
+    errors << "#{rel}: missing a ref, the id that links translations together"
+    next
+  end
+  if refs[lang].key?(ref)
+    errors << "#{rel}: ref \"#{ref}\" already used by #{refs[lang][ref]}"
+  else
+    refs[lang][ref] = rel
+  end
+
+  slug = name.sub(/\A\d{4}-\d{2}-\d{2}-/, "").delete_suffix(".md")
+  if slugs[lang].key?(slug)
+    errors << "#{rel}: slug \"#{slug}\" already used by #{slugs[lang][slug]}, permalinks would collide"
+  else
+    slugs[lang][slug] = rel
+  end
+end
+
+(refs["en"].keys + refs["es"].keys).uniq.each do |ref|
+  missing = %w[en es].reject { |l| refs[l].key?(ref) }
+  next if missing.empty?
+  owner = refs["en"][ref] || refs["es"][ref]
+  errors << "#{owner}: no #{missing.join(" and ")} counterpart for ref \"#{ref}\""
+end
+
+if errors.empty?
+  puts "check-front-matter: #{posts.size} posts, all checks passed."
+else
+  warn "check-front-matter: #{errors.size} problem(s):"
+  errors.each { |e| warn "  - #{e}" }
+  exit 1
+end

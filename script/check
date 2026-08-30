@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+cd "$(dirname "$0")/.."
+
+echo "==> Front matter"
+ruby script/check-front-matter
+
+echo "==> Jekyll build (baseurl stripped so internal links resolve on disk)"
+bundle exec jekyll build --baseurl "" --strict_front_matter
+
+echo "==> html-proofer (internal links, images, alt text)"
+bundle exec htmlproofer ./_site --disable-external

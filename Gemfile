@@ -34,3 +34,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # jekyll serve needs WEBrick, which left the Ruby standard library in Ruby 3.0.
 gem "webrick", "~> 1.8"
+
+# Checks the built site: internal links, images, alt attributes. Used by script/check.
+gem "html-proofer", "~> 5.0"
