@@ -36,9 +36,11 @@ Each time you run Strom, it:
 ## What you need
 
 - Python **3.12.8** (Strom is pinned to the 3.12 series)
-- A TP-Link Kasa smart plug with a known IP address
+- A TP-Link Kasa smart plug with a known IP address — that's the supported hardware today
 - API keys for [OpenWeather](https://openweathermap.org/appid) and [ENTSO-E](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide_prod_backup_06_11_2024.html#_authentication_and_authorisation)
 - A network connection
+
+Strom is open source: if your plug or heater is a different one, you can fork the project and adapt it to your hardware.
 
 ## Where to go next
 

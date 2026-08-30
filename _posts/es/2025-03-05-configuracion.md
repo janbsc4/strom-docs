@@ -83,7 +83,7 @@ DEVICEIP=192.168.1.42
 | `P_base` | 0.01 | €/kWh | Coste fijo de red (impuestos, peajes) que se añade a todos los precios de mercado |
 | `freq` | "1h" | — | Intervalo de control como offset de pandas, p. ej. `"1h"` o `"15min"` |
 
-Dos unidades merecen una palabra: **kWh/°C** es almacenamiento térmico —una capacidad de 0,56 kWh/°C significa que la calefacción debe gastar 0,56 kWh para subir un grado el aire de la habitación—. **°C/kW** es resistencia térmica —una resistencia de muro de 6,06 °C/kW significa que una diferencia de 1 °C a través del muro solo deja pasar 1/6,06 kW—.
+Dos unidades merecen una explicación: **kWh/°C** es almacenamiento térmico —una capacidad de 0,56 kWh/°C significa que la calefacción debe gastar 0,56 kWh para subir un grado el aire de la habitación—. **°C/kW** es resistencia térmica —una resistencia de muro de 6,06 °C/kW significa que una diferencia de 1 °C a través del muro solo deja pasar 1/6,06 kW—.
 
 `P_base` existe porque la factura eléctrica de un consumidor nunca llega a cero aunque el precio de mercado del día sí lo haga: los impuestos y peajes de red se añaden sobre el precio de mercado.
 

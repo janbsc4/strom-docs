@@ -35,10 +35,12 @@ Cada vez que ejecutas Strom, este:
 
 ## Qué necesitas
 
-- Python **3.12.8** (Strom está fijado a la serie 3.12)
-- Un enchufe inteligente TP-Link Kasa con una dirección IP conocida
+- Python **3.12.8** (Strom requiere la serie 3.12)
+- Un enchufe inteligente TP-Link Kasa con una dirección IP conocida — hoy es el hardware soportado
 - Claves de API de [OpenWeather](https://openweathermap.org/appid) y [ENTSO-E](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide_prod_backup_06_11_2024.html#_authentication_and_authorisation)
 - Una conexión de red
+
+Strom es código abierto: si tu enchufe o tu calefacción son otros, puedes hacer un fork del proyecto y adaptarlo a tu hardware.
 
 ## Por dónde seguir
 

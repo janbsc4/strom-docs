@@ -42,7 +42,7 @@ El modelo térmico de tu casa —capacidades caloríficas, aislamiento, potencia
 El optimizador (`find_heating_output`) funciona en dos modos:
 
 - **`optimal`** minimiza el coste eléctrico manteniendo la temperatura interior dentro de `[T_min, T_max]`. Es lo que usa una ejecución normal.
-- **`baseline`** sigue una temperatura objetivo (una media suavizada de 24 horas de la temperatura exterior, recortada a la banda de confort) con un término de coste pequeño. Imita un termostato común y existe como estrategia de referencia para comparar.
+- **`baseline`** sigue una temperatura objetivo (una media suavizada de 24 horas de la temperatura exterior, recortada a la banda de confort) con un término de coste pequeño. Imita un termostato corriente y existe como estrategia de referencia para comparar.
 
 `compare_output_costs` ejecuta ambos modos con los mismos datos y devuelve ambos calendarios, que es la base de las comparaciones de costes del [ejemplo de uso]({{ site.baseurl }}/es/ejemplo-de-uso).
 
@@ -56,10 +56,10 @@ Strom nunca inventa datos:
 - Los precios nunca se interpolan. Cada precio pertenece a su intervalo de mercado exacto; un intervalo sin publicar reutiliza el precio anterior durante 1 hora como máximo y después la ejecución se detiene.
 - Todas las marcas horarias se gestionan en UTC internamente, así que los resultados son coherentes en los cambios de horario de verano.
 
-## Cómo se gobierna el enchufe
+## Cómo se controla el enchufe
 
-Un enchufe inteligente solo puede estar ENCENDIDO o APAGADO, pero el optimizador produce valores fraccionarios entre 0 y 1. Strom salva la distancia con un **ciclo de trabajo**: dentro de cada intervalo de control, el enchufe está ENCENDIDO exactamente la fracción que pidió el optimizador y APAGADO el resto. Los encendidos de menos de 60 segundos se redondean al alza para no castigar el relé, y un vigilante independiente del optimizador fuerza el APAGADO tras 3 horas de encendido continuo como red de seguridad.
+Un enchufe inteligente solo puede estar ENCENDIDO o APAGADO, pero el optimizador produce valores fraccionarios entre 0 y 1. Strom lo resuelve con un **ciclo de trabajo**: dentro de cada intervalo de control, el enchufe está ENCENDIDO exactamente la fracción que pidió el optimizador y APAGADO el resto. Los encendidos de menos de 60 segundos se redondean al alza para no desgastar el relé, y un vigilante independiente del optimizador fuerza el APAGADO tras 3 horas de encendido continuo como red de seguridad.
 
 ## Programación
 
-Para un funcionamiento automatizado, ejecuta `strom` a intervalos regulares — la cadencia recomendada es una vez por hora. Ver [Uso]({{ site.baseurl }}/es/uso#programar-las-ejecuciones) para un ejemplo de cron.
+Para un funcionamiento automatizado, ejecuta `strom` a intervalos regulares — la frecuencia recomendada es una vez por hora. Ver [Uso]({{ site.baseurl }}/es/uso#programar-las-ejecuciones) para un ejemplo de cron.

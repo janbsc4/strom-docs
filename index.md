@@ -12,11 +12,11 @@ description: >-
   <div class="wrapper">
     <div class="hero-copy">
       <span class="eyebrow">Open-source smart heating</span>
-      <h1 class="hero-title">Heat when power is cheap. Stay warm <em>regardless</em>.</h1>
+      <h1 class="hero-title">Heat when power is cheap.</h1>
       <p class="hero-sub">
         Every day the electricity market publishes tomorrow's prices, hour by hour.
         <strong>Strom reads the curve, checks the weather, and runs your heater through the
-        cheapest safe hours</strong> — automatically, through a smart plug you already own.
+        cheapest safe hours</strong> — automatically, through a smart plug.
       </p>
       <div class="hero-actions">
         <a class="button button-primary" href="{{ site.baseurl }}/getting-started">Read the guide</a>
@@ -101,8 +101,10 @@ description: >-
       </li>
       <li>
         <span class="need-icon">requires</span>
-        <h3>A Kasa smart plug</h3>
-        <p>Any TP-Link Kasa plug on your network. Its IP address goes in one config file.</p>
+        <h3>A smart plug</h3>
+        <p>Today that means any TP-Link Kasa plug on your network; its IP address goes in
+        one config file. No Kasa at home? Strom is open source — fork it and adapt it to
+        your hardware.</p>
       </li>
       <li>
         <span class="need-icon">requires</span>

@@ -94,7 +94,7 @@ Durante noviembre de 2024 observamos picos de temperatura interior, aunque sin a
 
 ### De marzo de 2023 a marzo de 2025
 
-Para este periodo de dos años añadimos la opción de refrigeración, importante en Barcelona donde los costes de refrigeración son significativos. La calefacción en invierno sigue siendo el principal generador de coste. De forma más realista y eficiente, la refrigeración puede hacerse pasivamente, lo que en nuestro modelo equivaldría a hacer controlables los parámetros efectivos de aislamiento.
+Para este periodo de dos años añadimos la opción de refrigeración, importante en Barcelona donde los costes de refrigeración son significativos. La calefacción en invierno sigue siendo lo que más cuesta. De forma más realista y eficiente, la refrigeración puede hacerse pasivamente, lo que en nuestro modelo equivaldría a hacer controlables los parámetros efectivos de aislamiento.
 
 Durante la primavera y el otoño, cuando la temperatura exterior media está dentro de la banda de confort, los costes de calefacción y refrigeración son bajos. Es lo adecuado, porque también es la época en la que simplemente no usaríamos ninguno de los dos sistemas.
 
@@ -115,10 +115,10 @@ La temperatura del modelo óptimo tiene muchos picos como en los gráficos anter
 
 ### Modelado
 
-Al modelo aún le faltan añadidos para ser más realista. No incorporamos parámetros de eficiencia. Fijamos el precio base en un bajo 1 ct/kWh, tal como queríamos simular. Los parámetros de aislamiento y masa térmica proceden de una vivienda familiar del norte de Europa; otros valores pueden aplicar en otras ubicaciones.
+Al modelo aún le faltan añadidos para ser más realista. No incorporamos parámetros de eficiencia. Fijamos el precio base en un bajo 1 ct/kWh, tal como queríamos simular. Los parámetros de aislamiento y masa térmica proceden de una vivienda familiar del norte de Europa; en otras ubicaciones pueden aplicar valores distintos.
 
 Incluso con este nivel de detalle, un análisis de factores sería interesante para trazar el ahorro potencial de este método según ubicación y parámetros térmicos.
 
 ### Hardware dedicado
 
-La hoja de ruta actual (ver el README del repositorio) incluye un instalador de cron y un ejecutable autónomo, para que Strom pueda funcionar desatendido en hardware de gama baja para asistentes del hogar.
+La hoja de ruta actual (ver el README del repositorio) incluye un instalador de cron y un ejecutable autónomo, para que Strom pueda funcionar desatendido en hardware de gama baja para domótica.

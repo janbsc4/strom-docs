@@ -5,25 +5,24 @@ ref: home
 title: Calefacción inteligente
 description: >-
   Calefacción inteligente de código abierto: Strom lee los precios del
-  mercado day-ahead y la previsión del tiempo, y calienta en las horas
-  baratas y seguras.
+  mercado day-ahead y la previsión del tiempo, y calienta en las horas más
+  baratas sin pasar frío.
 image:
   path: /assets/images/og-image-es.png
   alt: >-
-    Strom tarjeta social: una curva de precios day-ahead de la electricidad
-    con las horas baratas de calefacción marcadas
+    Imagen de Strom para redes sociales: curva de precios de la electricidad
+    day-ahead con las horas baratas de calefacción marcadas
 ---
 
 <section class="hero">
   <div class="wrapper">
     <div class="hero-copy">
       <span class="eyebrow">Calefacción inteligente de código abierto</span>
-      <h1 class="hero-title">Calienta cuando la luz es barata. Quédate caliente <em>siempre</em>.</h1>
+      <h1 class="hero-title">Calienta cuando la luz es barata.</h1>
       <p class="hero-sub">
         Cada día el mercado eléctrico publica los precios de mañana, hora a hora.
         <strong>Strom lee la curva, mira el tiempo y pone tu calefacción en las horas
-        baratas y seguras</strong> — automáticamente, a través de un enchufe
-        inteligente que ya tienes en casa.
+        baratas</strong> — automáticamente, con un enchufe inteligente.
       </p>
       <div class="hero-actions">
         <a class="button button-primary" href="{{ site.baseurl }}/es/primeros-pasos">Leer la guía</a>
@@ -41,7 +40,7 @@ image:
     <div class="section-head">
       <span class="eyebrow">Cómo funciona una ejecución</span>
       <h2>Cuatro pasos, una vez por hora</h2>
-      <p>Strom es un script de Python sin más. Apúntalo a un enchufe inteligente, dale dos
+      <p>Strom es un simple script de Python. Apúntalo a un enchufe inteligente, dale dos
       claves de API y deja que cron lo llame cada hora. Cada ejecución hace lo mismo:</p>
     </div>
     <ol class="steps">
@@ -60,16 +59,16 @@ image:
       <li>
         <span class="step-no">03</span>
         <h3>Optimizar</h3>
-        <p>La optimización convexa encuentra de forma demostrable el calendario de
-        calefacción más barato para las próximas 24 horas, dentro de tu banda de
-        confort (18&ndash;24&nbsp;&deg;C por defecto).</p>
+        <p>La optimización convexa encuentra el calendario de calefacción más barato
+        posible para las próximas 24 horas —lo demuestra, no lo estima—, siempre dentro
+        de tu banda de confort (18&ndash;24&nbsp;&deg;C por defecto).</p>
       </li>
       <li>
         <span class="step-no">04</span>
         <h3>Actuar</h3>
-        <p>El enchufe ejecuta esta hora como ciclo de trabajo: un 40% de calefacción son
-        24 minutos encendido. Un vigilante corta la corriente si el enchufe se queda
-        encendido demasiado tiempo.</p>
+        <p>El enchufe ejecuta esta hora en ciclo de trabajo: si toca un 40% de
+        calefacción, 24 minutos encendido. Un vigilante corta la corriente si el enchufe
+        se queda encendido demasiado tiempo.</p>
       </li>
     </ol>
   </div>
@@ -80,9 +79,9 @@ image:
     <div>
       <span class="eyebrow">Medido, no prometido</span>
       <h2>Lo que ahorra</h2>
-      <p class="savings-figure">17% <small>menos de coste de calefacción en dos años que un
-      termostato constante — 66&nbsp;&euro; en nuestro caso de estudio en Barcelona, con la
-      misma banda de confort.</small></p>
+      <p class="savings-figure">17% <small>menos de gasto en calefacción en dos años
+      que con un termostato constante — 66&nbsp;&euro; en nuestro caso de estudio en
+      Barcelona, con la misma banda de confort.</small></p>
       <p class="note">La calefacción es flexible: <em>cuándo</em> calientas importa tanto
       como cuánto. El ahorro depende de tu zona de precios, el aislamiento y el clima:
       <a href="{{ site.baseurl }}/es/ejemplo-de-uso">consulta cómo lo medimos</a>.</p>
@@ -105,18 +104,19 @@ image:
       <li>
         <span class="need-icon">imprescindible</span>
         <h3>Python 3.12</h3>
-        <p>Strom está fijado a la serie 3.12. Con mise, la versión correcta se instala
+        <p>Strom requiere la serie 3.12. Con mise, la versión correcta se instala
         automáticamente.</p>
       </li>
       <li>
         <span class="need-icon">imprescindible</span>
-        <h3>Un enchufe Kasa</h3>
-        <p>Cualquier enchufe TP-Link Kasa en tu red. Su dirección IP va en un archivo de
-        configuración.</p>
+        <h3>Un enchufe inteligente</h3>
+        <p>Hoy, un TP-Link Kasa: cualquier modelo de tu red vale, y su IP va en un archivo
+        de configuración. ¿No tienes ninguno? Strom es código abierto — haz un fork y
+        adáptalo a tu hardware.</p>
       </li>
       <li>
         <span class="need-icon">imprescindible</span>
-        <h3>Dos claves de API gratis</h3>
+        <h3>Dos claves de API gratuitas</h3>
         <p>Una de <a href="https://openweathermap.org/appid">OpenWeatherMap</a> y otra de
         <a href="https://transparency.entsoe.eu/">ENTSO-E</a>. Ambas tienen nivel gratuito.</p>
       </li>
@@ -136,7 +136,7 @@ image:
     <p>Clona, configura, añade una línea al cron. La guía te acompaña en cada paso.</p>
     <div class="hero-actions">
       <a class="button button-primary" href="{{ site.baseurl }}/es/primeros-pasos">Leer la guía</a>
-      <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Star en GitHub</a>
+      <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Dale una estrella en GitHub</a>
     </div>
   </div>
 </section>

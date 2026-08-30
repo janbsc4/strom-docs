@@ -12,6 +12,8 @@ description: >-
 ---
 ¡Las contribuciones a Strom son bienvenidas! Por favor, abre primero un issue para comentar la idea o el cambio que tienes en mente.
 
+¿Solo quieres adaptarlo a tu hardware? Haz un fork del repositorio: todo el código es libre.
+
 Después puedes proponer cambios así:
 1. Haz un fork del repositorio
 2. Crea una rama con tu funcionalidad

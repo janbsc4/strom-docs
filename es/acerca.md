@@ -11,8 +11,8 @@ description: >-
 image:
   path: /assets/images/og-image-es.png
   alt: >-
-    Strom tarjeta social: una curva de precios day-ahead de la electricidad
-    con las horas baratas de calefacción marcadas
+    Imagen de Strom para redes sociales: curva de precios de la electricidad
+    day-ahead con las horas baratas de calefacción marcadas
 ---
 
 Este sitio documenta [Strom](https://github.com/Bloodwing1/Strom), un script
