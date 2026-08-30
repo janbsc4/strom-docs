@@ -40,6 +40,10 @@ bundle exec jekyll serve
 Open http://127.0.0.1:4000/strom-docs/ and confirm the page you changed
 renders. This is the done condition for any edit.
 
+`.mise.toml` pins Ruby 3.3 (the pinned `github-pages` gem set predates Ruby
+4). With mise active, plain `bundle exec jekyll serve` just works; `webrick`
+is in the Gemfile because it left the Ruby standard library.
+
 ## Writing style
 
 Readers are Strom users, not control theorists.

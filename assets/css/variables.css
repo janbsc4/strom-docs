@@ -1,28 +1,40 @@
 :root {
-  /* Font settings */
-  --base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --base-font-size: 1.125rem;
-  --base-font-weight: 400;
-  --small-font-size: calc(var(--base-font-size) * 0.875);
-  --base-line-height: 1.5;
+  /* ── Strom "Day-ahead" palette ───────────────────────────────
+     ink   : the night the market prices tomorrow
+     heat  : radiator amber — the cheap hours Strom buys
+     ice   : the price curve, cold data
+  ───────────────────────────────────────────────────────────── */
+  --ink: #0f1b2a;
+  --ink-2: #16263b;
+  --ink-3: #1e3450;
+  --paper: #f4f6f9;
+  --card: #ffffff;
+  --heat: #f2a33c;
+  --heat-soft: #f7bd72;
+  --ember: #ad5708;
+  --ice: #9fb4c9;
+  --ice-dim: #7390ac;
+  --slate: #43536a;
+  --text: #22314a;
+  --line: #d9e1ea;
+  --line-dark: rgba(159, 180, 201, 0.16);
 
-  /* Spacing */
-  --spacing-unit: 2rem;
+  /* Type */
+  --font-display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Colors */
-  --text-color: #2d3748;
-  --background-color: #ffffff;
-  --brand-color: #2a7ae2;
-  --grey-color: #718096;
-  --grey-color-light: #e2e8f0;
-  --grey-color-dark: #4a5568;
+  --base-font-size: 1.0625rem;
+  --base-line-height: 1.65;
+  --small-font-size: 0.875rem;
 
   /* Layout */
-  --content-width: 1200px;
+  --content-width: 1180px;
+  --prose-width: 44rem;
 
   /* Breakpoints */
-  --on-palm: 600px;
-  --on-laptop: 800px;
+  --on-palm: 640px;
+  --on-laptop: 900px;
 
   /* Table */
   --table-text-align: left;

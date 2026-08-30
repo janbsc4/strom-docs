@@ -1,6 +1,16 @@
-<div class="sidebar-content">
-  <h2>Handbook</h2>
-    {% for post in site.posts reversed %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</div>
+<aside class="sidebar" aria-label="Documentation guide">
+  <div class="sidebar-content">
+    <p class="sidebar-heading">Guide</p>
+    <ol>
+      {%- assign posts = site.posts | reverse -%}
+      {%- for post in posts -%}
+        <li>
+          <a href="{{ site.baseurl }}{{ post.url }}" {% if post.url == page.url %}class="is-active" aria-current="page"{% endif %}>
+            <span class="num">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>
+            <span>{{ post.title }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</aside>

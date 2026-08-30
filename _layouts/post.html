@@ -1,38 +1,46 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+{%- assign posts = site.posts | reverse -%}
+{%- for p in posts -%}
+  {%- if p.url == page.url -%}
+    {%- assign post_index = forloop.index0 -%}
+    {%- assign prev_index = post_index | minus: 1 -%}
+    {%- assign next_index = post_index | plus: 1 -%}
+    {%- if post_index > 0 -%}{%- assign prev_post = posts[prev_index] -%}{%- endif -%}
+    {%- if next_index < posts.size -%}{%- assign next_post = posts[next_index] -%}{%- endif -%}
+    {%- assign page_number = forloop.index -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<article class="post">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <span class="eyebrow">Guide {{ page_number | prepend: '0' | slice: -2, 2 }} / {{ posts.size }}</span>
+    <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content">
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  {% assign posts = site.posts | reverse %}
-  {% for post in posts %}
-    {% if post.url == page.url %}
-      {% assign post_index = forloop.index0 %}
-      {% assign next_index = post_index | plus: 1 %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-
-  {% if next_index < posts.size %}
-    {% assign next_post = posts[next_index] %}
-    <div class="next-post-link">
-      <hr>
-      <a href="{{ site.baseurl }}{{ next_post.url }}">
-        Next: {{ next_post.title }} →
+  <nav class="post-nav" aria-label="Guide pages">
+    {%- if prev_post -%}
+      <a href="{{ site.baseurl }}{{ prev_post.url }}">
+        <span class="dir">← Previous</span>
+        <span class="label">{{ prev_post.title }}</span>
       </a>
-    </div>
-  {% endif %}
+    {%- else -%}
+      <span></span>
+    {%- endif -%}
+    {%- if next_post -%}
+      <span class="next">
+      <a href="{{ site.baseurl }}{{ next_post.url }}">
+        <span class="dir">Next →</span>
+        <span class="label">{{ next_post.title }}</span>
+      </a>
+      </span>
+    {%- endif -%}
+  </nav>
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

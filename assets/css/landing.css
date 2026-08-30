@@ -1,0 +1,450 @@
+/* Landing page */
+
+/* ── Hero: the night auction ────────────────────────────── */
+.hero {
+  background:
+    radial-gradient(1100px 480px at 78% -10%, rgba(242, 163, 60, 0.13), transparent 60%),
+    radial-gradient(900px 420px at 8% 110%, rgba(62, 123, 196, 0.12), transparent 60%),
+    var(--ink);
+  color: #e9eff5;
+  overflow: hidden;
+}
+
+.hero .wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 3rem;
+  align-items: center;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  min-height: calc(100vh - 3.75rem);
+}
+
+.hero-copy .eyebrow {
+  color: var(--heat);
+  display: block;
+  margin-bottom: 1.1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 3.6vw, 2.95rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+  color: #f5f8fb;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--heat);
+}
+
+.hero-sub {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ice);
+  max-width: 34rem;
+  margin-bottom: 2rem;
+}
+
+.hero-sub strong {
+  color: #e9eff5;
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.button-primary {
+  background: var(--heat);
+  color: var(--ink);
+}
+
+.button-primary:hover {
+  background: var(--heat-soft);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.button-ghost {
+  border-color: rgba(159, 180, 201, 0.45);
+  color: #e9eff5;
+  background: transparent;
+}
+
+.button-ghost:hover {
+  border-color: var(--heat);
+  color: var(--heat-soft);
+}
+
+.hero-chart {
+  min-width: 0;
+}
+
+.hero-chart .chart-frame {
+  background: linear-gradient(180deg, var(--ink-2), var(--ink));
+  border: 1px solid var(--line-dark);
+  border-radius: 14px;
+  padding: 1.1rem 1.1rem 0.7rem;
+  box-shadow: 0 24px 60px -30px rgba(2, 8, 18, 0.9);
+}
+
+.hero-chart .chart-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.8rem 0.35rem 0.15rem;
+}
+
+.hero-chart .chart-caption .cap {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--ice-dim);
+}
+
+.hero-chart .chart-legend {
+  display: flex;
+  gap: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ice);
+}
+
+.hero-chart .chart-legend .key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-chart .chart-legend .swatch-bar {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--heat);
+}
+
+.hero-chart .chart-legend .swatch-line {
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: #c3d4e4;
+}
+
+/* ── Light sections ─────────────────────────────────────── */
+.section {
+  padding: 4.25rem 0;
+}
+
+.section-head {
+  max-width: 46rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin-top: 0.5rem;
+}
+
+.section-head p {
+  color: var(--slate);
+  margin-top: 0.75rem;
+}
+
+/* How a run works: real pipeline order */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.steps li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem 1.3rem 1.5rem;
+  position: relative;
+}
+
+.steps li::after {
+  content: "";
+  position: absolute;
+  right: -0.6rem;
+  top: 50%;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--line);
+}
+
+.steps li:last-child::after {
+  display: none;
+}
+
+.steps .step-no {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ember);
+  border: 1px solid var(--heat-soft);
+  background: rgba(242, 163, 60, 0.09);
+  border-radius: 6px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.steps h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.45rem;
+}
+
+.steps p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--slate);
+  margin: 0;
+}
+
+@media (max-width: 899px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .steps li:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 559px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .steps li::after {
+    display: none;
+  }
+}
+
+/* Savings band (dark) */
+.savings {
+  background: var(--ink);
+  color: #e9eff5;
+}
+
+.savings .wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.savings .eyebrow {
+  color: var(--heat);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.savings h2 {
+  color: #f5f8fb;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.savings .savings-figure {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  color: var(--heat);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.savings .savings-figure small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--ice);
+  letter-spacing: 0;
+  margin-top: 0.5rem;
+}
+
+.savings p.note {
+  color: var(--ice);
+  font-size: 0.95rem;
+}
+
+.savings p.note a {
+  color: #e9eff5;
+}
+
+.savings .savings-chart {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 24px 60px -30px rgba(2, 8, 18, 0.9);
+}
+
+.savings .savings-chart img {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.savings .savings-chart figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ice-dim);
+  padding: 0.6rem 0.2rem 0.1rem;
+  text-align: center;
+}
+
+/* Checklist band */
+.need {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.need li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.need .need-icon {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ember);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.need h3 {
+  font-size: 1.02rem;
+}
+
+.need p {
+  font-size: 0.88rem;
+  color: var(--slate);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.need p a {
+  color: var(--slate);
+}
+
+@media (max-width: 899px) {
+  .need {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 559px) {
+  .need {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Closing CTA */
+.cta {
+  background:
+    radial-gradient(700px 300px at 50% 0%, rgba(242, 163, 60, 0.14), transparent 70%),
+    var(--ink);
+  color: #e9eff5;
+  text-align: center;
+}
+
+/* 404 */
+.notfound {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.notfound-code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--ember);
+  margin-bottom: 1.25rem;
+}
+
+.notfound p {
+  color: var(--slate);
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notfound .button {
+  margin-top: 1rem;
+}
+
+.cta h2 {
+  color: #f5f8fb;
+  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.cta p {
+  color: var(--ice);
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+}
+
+.cta .hero-actions {
+  justify-content: center;
+}
+
+/* ── Hero responsive ────────────────────────────────────── */
+@media (max-width: 899px) {
+  .hero .wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    min-height: 0;
+  }
+
+  .savings .wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

@@ -1,59 +1,66 @@
-/* Import variables */
-@import "variables.css";
+/* Rouge syntax palette for ink-dark code panels */
 
-/* Syntax highlighting styles */
 .highlight {
-  background: #f8fafc;
-  margin-bottom: calc(var(--spacing-unit) / 2);
-  border-radius: 6px;
+  background: var(--ink);
+  color: #dce7f1;
 }
 
 .highlighter-rouge .highlight {
-  background: #f8fafc;
+  background: var(--ink);
 }
 
 /* Comments */
-.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { 
-  color: #64748b;
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #6c86a0;
   font-style: italic;
 }
 
 /* Keywords */
 .highlight .k, .highlight .kc, .highlight .kd, .highlight .kp, .highlight .kr {
-  color: #6366f1;
+  color: #f2a33c;
   font-weight: 600;
 }
 
 /* Strings */
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, 
-.highlight .sh, .highlight .si, .highlight .sx, .highlight .s1 {
-  color: #16a34a;
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2,
+.highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1 {
+  color: #9ece8b;
+}
+
+/* Object labels (JSON keys) */
+.highlight .nl {
+  color: #f2a33c;
 }
 
 /* Numbers */
 .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il {
-  color: #0891b2;
+  color: #8fd0dd;
 }
 
 /* Function names */
 .highlight .nf {
-  color: #0284c7;
+  color: #8ab8ef;
   font-weight: 600;
 }
 
 /* Class names */
 .highlight .nc {
-  color: #7c3aed;
+  color: #d9b06c;
   font-weight: 600;
 }
 
 /* Variables */
 .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi {
-  color: #0f766e;
+  color: #7fd2b8;
 }
 
 /* Operators */
 .highlight .o, .highlight .ow {
-  color: #475569;
+  color: #a9bdd1;
   font-weight: 600;
+}
+
+/* Punctuation / plain */
+.highlight .p {
+  color: #b9c9d8;
 }
