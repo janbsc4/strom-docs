@@ -5,6 +5,10 @@ date:   2025-03-08 09:57:47 +0100
 categories: docs
 lang: es
 ref: usage-example
+description: >-
+  Un caso de estudio de dos años en Barcelona: la programación consciente
+  de precios de Strom ahorró un 17% — 66 € — frente a un termostato
+  constante.
 ---
 La idea del proyecto Strom nació al ver las enormes fluctuaciones del precio de la energía en España. Como la calefacción tiene cierta flexibilidad —en qué momento la enciendes—, hay una oportunidad para elegir las horas óptimas y bajar la factura de la energía.
 
@@ -20,7 +24,7 @@ La idea del proyecto Strom nació al ver las enormes fluctuaciones del precio de
 ## Prueba de concepto en un hackathon
 Durante un fin de semana de enero de 2025 escribimos el código principal de Strom. Conseguimos que funcionara e interactuara correctamente con el enchufe inteligente que compramos. Aunque había mucho margen de mejora, celebramos aquel primer logro de "montaje mínimo viable".
 
-# Caso de estudio
+## Caso de estudio
 
 Modelamos una casa como un sistema acoplado de dos componentes: el aire interior de la vivienda y su muro aislado.
 

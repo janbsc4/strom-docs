@@ -5,6 +5,9 @@ date:   2025-03-09 12:57:47 +0100
 categories: docs
 lang: en
 ref: contributing
+description: >-
+  How to contribute to Strom: open an issue first, then fork, branch and
+  submit a pull request, plus the development setup and check commands.
 ---
 Contributions to Strom are welcome! Please first open an issue to discuss the idea/change you have in mind.
 

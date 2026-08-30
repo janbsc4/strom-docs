@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janbalanya.com/strom-docs/sitemap.xml

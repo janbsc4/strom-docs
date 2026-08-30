@@ -2,6 +2,10 @@
 layout: landing
 lang: en
 ref: home
+title: Heat when power is cheap
+description: >-
+  Open-source smart heating: Strom reads day-ahead electricity prices and the
+  weather forecast, then heats through the cheapest safe hours.
 ---
 
 <section class="hero">

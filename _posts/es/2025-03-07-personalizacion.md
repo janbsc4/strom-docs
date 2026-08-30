@@ -5,6 +5,9 @@ date:   2025-03-07 11:57:47 +0100
 categories: docs
 lang: es
 ref: customization
+description: >-
+  Adapta Strom a tu ciudad, tu zona de precios de ENTSO-E y tu casa:
+  ubicación meteorológica, modos de optimización, datos y ciclo de trabajo.
 ---
 Strom viene con valores por defecto para Barcelona y España, pero todas las entradas son ajustables: tu ciudad, tu zona de precios y tu casa.
 

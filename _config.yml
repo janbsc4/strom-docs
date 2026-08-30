@@ -22,6 +22,9 @@ title: Strom
 description: >-
   Open-source smart heating: Strom reads day-ahead electricity prices and the
   weather forecast, then heats through the cheapest safe hours.
+author:
+  name: "Jan Balanyà Scholl"
+  url: "https://janbalanya.com"
 author_links:
   - name: "Jan Balanyà Scholl"
     url: "https://janbalanya.com"
@@ -38,19 +41,28 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/og-image.png
+      image:
+        path: /assets/images/og-image.png
+        alt: >-
+          Strom social card: a day-ahead electricity price curve with the
+          cheapest heating hours highlighted
   - scope:
       path: "_posts/es"
       type: posts
     values:
       lang: es
       permalink: /es/:slug
-      image: /assets/images/og-image-es.png
+      image:
+        path: /assets/images/og-image-es.png
+        alt: >-
+          Strom tarjeta social: una curva de precios day-ahead de la
+          electricidad con las horas baratas de calefacción marcadas
 
 # Build settings
 # theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 # Exclude from processing.
 # Repo files that are not site content, so they are not published to the site.

@@ -5,6 +5,9 @@ date:   2025-03-05 09:00:00 +0100
 categories: docs
 lang: en
 ref: getting-started
+description: >-
+  Set up Strom, the open-source smart heating script: how a run finds your
+  smart plug, fetches prices and weather, and heats in the cheapest hours.
 ---
 Strom is a free, open-source script for smart heating. It uses weather forecasts and **day-ahead electricity prices** — the hourly prices of an electricity market that are published one day in advance — to find the cheapest heating schedule that still keeps your home comfortable. The schedule is computed with **convex optimization**, a mathematical technique that provably finds the best possible schedule rather than a good guess. A smart plug then carries the schedule out.
 

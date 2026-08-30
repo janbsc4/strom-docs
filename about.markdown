@@ -5,6 +5,9 @@ permalink: /about/
 no_sidebar: true
 lang: en
 ref: about
+description: >-
+  Who builds Strom, the free smart-heating script, and why this
+  documentation exists.
 ---
 
 This site documents [Strom](https://github.com/Bloodwing1/Strom), a free,

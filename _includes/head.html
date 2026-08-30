@@ -3,6 +3,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+  {%- if page.noindex -%}
+  <meta name="robots" content="noindex">
+  {%- endif -%}
   {%- comment -%} hreflang alternates for translated pages {%- endcomment -%}
   {%- if page.ref -%}
     {%- assign my_lang_h = page.lang | default: "en" -%}
@@ -10,10 +13,10 @@
     {%- if my_lang_h == "es" -%}{%- assign other_lang_h = "en" -%}{%- endif -%}
     {%- assign alt_candidates = site.posts | where: "ref", page.ref | where: "lang", other_lang_h -%}
     {%- assign alt_href = alt_candidates.first.url -%}
-    {%- if alt_href == blank -%}
+    {%- unless alt_href -%}
       {%- assign alt_candidates = site.html_pages | where: "ref", page.ref | where: "lang", other_lang_h -%}
       {%- assign alt_href = alt_candidates.first.url -%}
-    {%- endif -%}
+    {%- endunless -%}
     {%- if alt_href -%}
   <link rel="alternate" hreflang="{{ my_lang_h }}" href="{{ page.url | absolute_url }}">
   <link rel="alternate" hreflang="{{ other_lang_h }}" href="{{ alt_href | absolute_url }}">
@@ -28,8 +31,8 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
   <!-- Turbo Drive -->
-  <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.11/dist/turbo.es2017-umd.min.js" integrity="sha384-W9r5irrcU/3NGMyRz5PB5S/eyEznggxjg977tVsr4zjjlntKJLHa1zyFChn/lddk" crossorigin="anonymous"></script>
-  <script src="{{ '/assets/js/turbo-config.js' | relative_url }}"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.11/dist/turbo.es2017-umd.min.js" integrity="sha384-W9r5irrcU/3NGMyRz5PB5S/eyEznggxjg977tVsr4zjjlntKJLHa1zyFChn/lddk" crossorigin="anonymous"></script>
+  <script defer src="{{ '/assets/js/turbo-config.js' | relative_url }}"></script>
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">

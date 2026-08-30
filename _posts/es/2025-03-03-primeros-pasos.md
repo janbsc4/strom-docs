@@ -5,6 +5,9 @@ date:   2025-03-05 09:00:00 +0100
 categories: docs
 lang: es
 ref: getting-started
+description: >-
+  Conoce Strom, el script libre de calefacción inteligente: cómo encuentra
+  tu enchufe, obtiene precios y tiempo, y calienta en las horas más baratas.
 ---
 Strom es un script libre y de código abierto para calefacción inteligente. Utiliza previsiones meteorológicas y los **precios de electricidad day-ahead** —los precios horarios de un mercado eléctrico que se publican con un día de antelación— para encontrar el calendario de calefacción más barato que mantiene tu hogar confortable. El calendario se calcula con **optimización convexa**, una técnica matemática que encuentra de forma demostrable el mejor calendario posible en lugar de una buena suposición. Un enchufe inteligente se encarga de ejecutarlo.
 

@@ -5,6 +5,9 @@ date:   2025-03-05 10:00:00 +0100
 categories: docs
 lang: es
 ref: installation
+description: >-
+  Instala Strom paso a paso: clona el repositorio, crea un entorno virtual,
+  haz pip install y coloca tus claves y credenciales en la carpeta config/.
 ---
 **Nota:** Strom requiere **Python 3.12.8**. No se admiten versiones anteriores ni posteriores. Si usas [mise](https://mise.jdx.dev/), el Python correcto se instala automáticamente.
 

@@ -5,6 +5,10 @@ date:   2025-03-08 09:57:47 +0100
 categories: docs
 lang: en
 ref: usage-example
+description: >-
+  A two-year Barcelona case study: Strom's price-aware heating schedule cut
+  costs 17% — 66 € — versus a constant thermostat, with the same comfort
+  band.
 --- 
 The idea for the Strom project came from realizing the huge energy price fluctuations in Spain. Since heating has a bit of flexibility, on which time you turn it on, there is an opportunity to pick the optimal hours and lower the energy bill.
 
@@ -20,7 +24,7 @@ The idea for the Strom project came from realizing the huge energy price fluctua
 ## Proof of Concept Hackathon
 Over a weekend in January 2025 we worked on the main code for Strom. We got the code to work and interact correctly with the smart plug that we bought. Despite there being a lot of room for improvement, we celebrated this first "minimum viable setup" achievement.
 
-# Case study
+## Case study
 
 We modeled a house as a coupled, two-component system: the indoor air inside the house and its insulated wall.
 

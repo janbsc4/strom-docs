@@ -5,6 +5,9 @@ date:   2025-03-05 11:00:00 +0100
 categories: docs
 lang: es
 ref: configuration
+description: >-
+  Dónde busca Strom su carpeta de configuración, qué contienen los cuatro
+  archivos y cada parámetro de la casa con su valor por defecto y unidad.
 ---
 Strom lee todos los ajustes personales de una única **carpeta de configuración**: claves de API, credenciales del enchufe inteligente y (opcionalmente) los parámetros de tu casa. Todo se valida al arrancar, antes de cualquier llamada de red u operación con el dispositivo, así que los errores aparecen de inmediato con un mensaje accionable.
 
