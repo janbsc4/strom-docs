@@ -3,6 +3,8 @@ layout: post
 title:  "Installation"
 date:   2025-03-05 10:00:00 +0100
 categories: docs
+lang: en
+ref: installation
 ---
 **Note:** Strom requires **Python 3.12.8**. Earlier or later versions are not supported. If you use [mise](https://mise.jdx.dev/), the correct Python is provisioned automatically.
 

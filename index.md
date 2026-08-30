@@ -1,5 +1,7 @@
 ---
 layout: landing
+lang: en
+ref: home
 ---
 
 <section class="hero">

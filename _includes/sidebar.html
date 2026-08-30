@@ -1,9 +1,15 @@
+{%- assign my_lang = page.lang | default: "en" -%}
+{%- if my_lang == "es" -%}
+  {%- assign t_guide = "Guía" -%}
+{%- else -%}
+  {%- assign t_guide = "Guide" -%}
+{%- endif -%}
 <aside class="sidebar" aria-label="Documentation guide">
   <div class="sidebar-content">
-    <p class="sidebar-heading">Guide</p>
+    <p class="sidebar-heading">{{ t_guide }}</p>
     <ol>
-      {%- assign posts = site.posts | reverse -%}
-      {%- for post in posts -%}
+      {%- assign guide_posts = site.posts | reverse | where: "lang", my_lang -%}
+      {%- for post in guide_posts -%}
         <li>
           <a href="{{ site.baseurl }}{{ post.url }}" {% if post.url == page.url %}class="is-active" aria-current="page"{% endif %}>
             <span class="num">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>

@@ -2,10 +2,27 @@
   Signature visual: one day-ahead curve for tomorrow, with the hours
   Strom chooses to heat drawn as amber bars underneath.
   Static inline SVG — crisp at any size, no JS.
+  Parameter: lang ("en" or "es", defaults to page lang).
 {%- endcomment -%}
+{%- assign chart_lang = include.lang | default: page.lang | default: "en" -%}
+{%- if chart_lang == "es" -%}
+  {%- assign c_aria = "Gráfico de los precios horarios de electricidad de mañana. La curva es baja durante la noche y a mediodía, y alcanza su máximo por la tarde-noche. Las barras ámbar marcan las horas baratas en las que Strom enciende la calefacción: madrugada, mediodía y noche." -%}
+  {%- assign c_caption = "Precios del mercado day-ahead, publicados una vez al día · cént/kWh" -%}
+  {%- assign c_legend_on = "calentador encendido" -%}
+  {%- assign c_legend_price = "precio" -%}
+  {%- assign c_axis = "HORA DEL DÍA" -%}
+  {%- assign c_peak = "pico nocturno" -%}
+{%- else -%}
+  {%- assign c_aria = "Chart of hourly electricity prices for tomorrow. The curve is low overnight and around midday and peaks in the evening. Amber bars mark the cheap hours when Strom switches the heater on: early morning, midday and late night." -%}
+  {%- assign c_caption = "Day-ahead prices, published once a day · ct/kWh" -%}
+  {%- assign c_legend_on = "heater on" -%}
+  {%- assign c_legend_price = "price" -%}
+  {%- assign c_axis = "HOUR OF DAY" -%}
+  {%- assign c_peak = "evening peak" -%}
+{%- endif -%}
 <div class="chart-frame">
-  <svg viewBox="0 0 560 296" width="100%" role="img" aria-label="Chart of hourly electricity prices for tomorrow. The curve is low overnight and around midday and peaks in the evening. Amber bars mark the cheap hours when Strom switches the heater on: early morning, midday and late night.">
-    <title>Tomorrow's day-ahead prices and Strom's heating schedule</title>
+  <svg viewBox="0 0 560 296" width="100%" role="img" aria-label="{{ c_aria }}">
+    <title>{{ c_aria }}</title>
 
     <!-- grid -->
     <g stroke="rgba(159,180,201,0.14)" stroke-width="1">
@@ -27,7 +44,7 @@
       <text x="372" y="273" text-anchor="middle">16</text>
       <text x="454" y="273" text-anchor="middle">20</text>
       <text x="536" y="273" text-anchor="middle">24</text>
-      <text x="290" y="286" text-anchor="middle" letter-spacing="0.1em" font-size="10">HOUR OF DAY</text>
+      <text x="290" y="286" text-anchor="middle" letter-spacing="0.1em" font-size="10">{{ c_axis }}</text>
     </g>
 
     <!-- area under the curve -->
@@ -52,16 +69,16 @@
 
     <!-- evening peak annotation -->
     <g font-family="'IBM Plex Mono', monospace" font-size="10" fill="#9fb4c9">
-      <text x="433.5" y="64" text-anchor="middle">evening peak</text>
+      <text x="433.5" y="64" text-anchor="middle">{{ c_peak }}</text>
     </g>
     <line x1="433.5" y1="70" x2="433.5" y2="74" stroke="#9fb4c9" stroke-width="1"/>
   </svg>
 
   <div class="chart-caption">
-    <span class="cap">Day-ahead prices, published once a day · ct/kWh</span>
+    <span class="cap">{{ c_caption }}</span>
     <span class="chart-legend">
-      <span class="key"><span class="swatch-bar"></span>heater on</span>
-      <span class="key"><span class="swatch-line"></span>price</span>
+      <span class="key"><span class="swatch-bar"></span>{{ c_legend_on }}</span>
+      <span class="key"><span class="swatch-line"></span>{{ c_legend_price }}</span>
     </span>
   </div>
 </div>

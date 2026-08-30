@@ -3,6 +3,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+  {%- comment -%} hreflang alternates for translated pages {%- endcomment -%}
+  {%- if page.ref -%}
+    {%- assign my_lang_h = page.lang | default: "en" -%}
+    {%- assign other_lang_h = "es" -%}
+    {%- if my_lang_h == "es" -%}{%- assign other_lang_h = "en" -%}{%- endif -%}
+    {%- assign alt_candidates = site.posts | where: "ref", page.ref | where: "lang", other_lang_h -%}
+    {%- assign alt_href = alt_candidates.first.url -%}
+    {%- if alt_href == blank -%}
+      {%- assign alt_candidates = site.html_pages | where: "ref", page.ref | where: "lang", other_lang_h -%}
+      {%- assign alt_href = alt_candidates.first.url -%}
+    {%- endif -%}
+    {%- if alt_href -%}
+  <link rel="alternate" hreflang="{{ my_lang_h }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ other_lang_h }}" href="{{ alt_href | absolute_url }}">
+    {%- endif -%}
+  {%- endif -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">

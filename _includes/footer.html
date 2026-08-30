@@ -1,3 +1,9 @@
+{%- assign my_lang = page.lang | default: "en" -%}
+{%- if my_lang == "es" -%}
+  {%- assign t_tagline = "Calefacción inteligente, libre y de código abierto. Creado por Daniel Viladrich, Max Balanyà Scholl y" -%}
+{%- else -%}
+  {%- assign t_tagline = "Free, open-source smart heating. Created by Daniel Viladrich, Max Balanyà Scholl &amp;" -%}
+{%- endif -%}
 <footer class="site-footer">
   <div class="wrapper">
     <a class="footer-brand" href="https://github.com/{{ site.github_username }}">
@@ -7,7 +13,7 @@
       <span>Strom</span>
     </a>
     <p class="footer-meta">
-      Free, open-source smart heating. Created by Daniel Viladrich, Max Balanyà Scholl &amp;
+      {{ t_tagline }}
       <a href="https://janbalanya.com">Jan Balanyà Scholl</a>.
     </p>
   </div>

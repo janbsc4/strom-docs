@@ -1,14 +1,24 @@
 ---
 layout: default
 ---
-{%- assign posts = site.posts | reverse -%}
-{%- for p in posts -%}
+{%- assign my_lang = page.lang | default: "en" -%}
+{%- if my_lang == "es" -%}
+  {%- assign t_guide = "Guía" -%}
+  {%- assign t_prev = "← Anterior" -%}
+  {%- assign t_next = "Siguiente →" -%}
+{%- else -%}
+  {%- assign t_guide = "Guide" -%}
+  {%- assign t_prev = "← Previous" -%}
+  {%- assign t_next = "Next →" -%}
+{%- endif -%}
+{%- assign guide_posts = site.posts | reverse | where: "lang", my_lang -%}
+{%- for p in guide_posts -%}
   {%- if p.url == page.url -%}
     {%- assign post_index = forloop.index0 -%}
     {%- assign prev_index = post_index | minus: 1 -%}
     {%- assign next_index = post_index | plus: 1 -%}
-    {%- if post_index > 0 -%}{%- assign prev_post = posts[prev_index] -%}{%- endif -%}
-    {%- if next_index < posts.size -%}{%- assign next_post = posts[next_index] -%}{%- endif -%}
+    {%- if post_index > 0 -%}{%- assign prev_post = guide_posts[prev_index] -%}{%- endif -%}
+    {%- if next_index < guide_posts.size -%}{%- assign next_post = guide_posts[next_index] -%}{%- endif -%}
     {%- assign page_number = forloop.index -%}
   {%- endif -%}
 {%- endfor -%}
@@ -16,7 +26,7 @@ layout: default
 <article class="post">
 
   <header class="post-header">
-    <span class="eyebrow">Guide {{ page_number | prepend: '0' | slice: -2, 2 }} / {{ posts.size }}</span>
+    <span class="eyebrow">{{ t_guide }} {{ page_number | prepend: '0' | slice: -2, 2 }} / {{ guide_posts.size }}</span>
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
@@ -27,7 +37,7 @@ layout: default
   <nav class="post-nav" aria-label="Guide pages">
     {%- if prev_post -%}
       <a href="{{ site.baseurl }}{{ prev_post.url }}">
-        <span class="dir">← Previous</span>
+        <span class="dir">{{ t_prev }}</span>
         <span class="label">{{ prev_post.title }}</span>
       </a>
     {%- else -%}
@@ -36,7 +46,7 @@ layout: default
     {%- if next_post -%}
       <span class="next">
       <a href="{{ site.baseurl }}{{ next_post.url }}">
-        <span class="dir">Next →</span>
+        <span class="dir">{{ t_next }}</span>
         <span class="label">{{ next_post.title }}</span>
       </a>
       </span>

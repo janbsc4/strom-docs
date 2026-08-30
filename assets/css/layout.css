@@ -88,9 +88,37 @@
   background: transparent;
 }
 
+.site-nav .page-link.lang-switch {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(242, 163, 60, 0.55);
+  color: var(--heat);
+  padding: 0.35rem 0.7rem;
+}
+
+.site-nav .page-link.lang-switch:hover {
+  background: var(--heat);
+  color: var(--ink);
+}
+
 @media (max-width: 480px) {
   .site-nav .page-link span.github-label {
     display: none;
+  }
+
+  .site-header .wrapper {
+    gap: 0.5rem;
+  }
+
+  .site-nav {
+    gap: 0.15rem;
+  }
+
+  .site-nav .page-link {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.9rem;
   }
 }
 

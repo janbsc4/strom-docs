@@ -3,6 +3,8 @@ layout: post
 title:  "Customization"
 date:   2025-03-07 11:57:47 +0100
 categories: docs
+lang: en
+ref: customization
 ---
 Strom ships with defaults for Barcelona and Spain, but every input can be adjusted: your city, your price zone and your house.
 

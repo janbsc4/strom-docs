@@ -3,6 +3,8 @@ layout: page
 title: About
 permalink: /about/
 no_sidebar: true
+lang: en
+ref: about
 ---
 
 This site documents [Strom](https://github.com/Bloodwing1/Strom), a free,
