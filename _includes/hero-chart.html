@@ -25,7 +25,7 @@
     <title>{{ c_aria }}</title>
 
     <!-- grid -->
-    <g stroke="rgba(159,180,201,0.14)" stroke-width="1">
+    <g class="chart-grid" stroke="rgba(159,180,201,0.14)" stroke-width="1">
       <line x1="44" y1="96" x2="536" y2="96"/>
       <line x1="44" y1="146" x2="536" y2="146"/>
       <line x1="44" y1="196" x2="536" y2="196"/>
@@ -33,7 +33,7 @@
     </g>
 
     <!-- axis labels -->
-    <g font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#7f97ad">
+    <g class="chart-axis" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#7f97ad">
       <text x="36" y="100" text-anchor="end">30</text>
       <text x="36" y="150" text-anchor="end">20</text>
       <text x="36" y="200" text-anchor="end">10</text>
@@ -48,11 +48,11 @@
     </g>
 
     <!-- area under the curve -->
-    <polygon points="44.0,155.0 64.5,169.0 85.0,185.5 105.5,195.0 126.0,198.0 146.5,187.0 167.0,163.5 187.5,134.0 208.0,112.0 228.5,125.5 249.0,144.5 269.5,160.0 290.0,176.5 310.5,188.0 331.0,194.0 351.5,185.0 372.0,167.0 392.5,138.0 413.0,99.5 433.5,77.0 454.0,90.0 474.5,108.0 495.0,129.0 515.5,147.0 536,246 44,246"
+    <polygon class="chart-area" points="44.0,155.0 64.5,169.0 85.0,185.5 105.5,195.0 126.0,198.0 146.5,187.0 167.0,163.5 187.5,134.0 208.0,112.0 228.5,125.5 249.0,144.5 269.5,160.0 290.0,176.5 310.5,188.0 331.0,194.0 351.5,185.0 372.0,167.0 392.5,138.0 413.0,99.5 433.5,77.0 454.0,90.0 474.5,108.0 495.0,129.0 515.5,147.0 536,246 44,246"
       fill="rgba(159,180,201,0.10)"/>
 
     <!-- heater-ON hours -->
-    <g fill="#f2a33c">
+    <g class="chart-bars" fill="#f2a33c">
       <rect x="86.5" y="185.5" width="17.5" height="60.5" rx="2"/>
       <rect x="107.0" y="195.0" width="17.5" height="51.0" rx="2"/>
       <rect x="127.5" y="198.0" width="17.5" height="48.0" rx="2"/>
@@ -64,14 +64,16 @@
     </g>
 
     <!-- the price curve -->
-    <polyline points="44.0,155.0 64.5,169.0 85.0,185.5 105.5,195.0 126.0,198.0 146.5,187.0 167.0,163.5 187.5,134.0 208.0,112.0 228.5,125.5 249.0,144.5 269.5,160.0 290.0,176.5 310.5,188.0 331.0,194.0 351.5,185.0 372.0,167.0 392.5,138.0 413.0,99.5 433.5,77.0 454.0,90.0 474.5,108.0 495.0,129.0 515.5,147.0"
+    <polyline class="chart-curve" pathLength="1" points="44.0,155.0 64.5,169.0 85.0,185.5 105.5,195.0 126.0,198.0 146.5,187.0 167.0,163.5 187.5,134.0 208.0,112.0 228.5,125.5 249.0,144.5 269.5,160.0 290.0,176.5 310.5,188.0 331.0,194.0 351.5,185.0 372.0,167.0 392.5,138.0 413.0,99.5 433.5,77.0 454.0,90.0 474.5,108.0 495.0,129.0 515.5,147.0"
       fill="none" stroke="#c3d4e4" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 
     <!-- evening peak annotation -->
-    <g font-family="'IBM Plex Mono', monospace" font-size="10" fill="#9fb4c9">
-      <text x="433.5" y="64" text-anchor="middle">{{ c_peak }}</text>
+    <g class="chart-peak">
+      <g font-family="'IBM Plex Mono', monospace" font-size="10" fill="#9fb4c9">
+        <text x="433.5" y="64" text-anchor="middle">{{ c_peak }}</text>
+      </g>
+      <line x1="433.5" y1="70" x2="433.5" y2="74" stroke="#9fb4c9" stroke-width="1"/>
     </g>
-    <line x1="433.5" y1="70" x2="433.5" y2="74" stroke="#9fb4c9" stroke-width="1"/>
   </svg>
 
   <div class="chart-caption">
