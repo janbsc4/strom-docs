@@ -23,7 +23,7 @@ Cada vez que ejecutas Strom, este:
 4. **Calcula el calendario de calefacción más barato** para las próximas 24 horas (configurable).
 5. **Controla el enchufe durante la hora actual** mediante un ciclo de trabajo acotado: si el optimizador decide un 40% de calefacción para esta hora, el enchufe está ENCENDIDO 24 minutos y APAGADO el resto. Un vigilante independiente fuerza el APAGADO si el enchufe permanece encendido más de 3 horas seguidas.
 
-Todo el recorrido —desde la obtención de datos hasta el vigilante— está dibujado en el [diagrama del proceso de decisión]({{ site.baseurl }}/strom-decision-diagram.html).
+Todo el recorrido —desde la obtención de datos hasta el vigilante— está dibujado en el [diagrama del proceso de decisión]({{ site.baseurl }}/strom-decision-diagram.html){: data-turbo="false" }.
 
 ## Características principales
 

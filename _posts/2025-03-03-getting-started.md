@@ -23,7 +23,7 @@ Each time you run Strom, it:
 4. **Computes the cheapest heating schedule** for the next 24 hours (configurable).
 5. **Runs the plug for the current hour** using a bounded duty cycle: if the optimizer decides on 40% heating for this hour, the plug is ON for 24 minutes and OFF for the rest. An independent watchdog forces the plug OFF if it ever stays on for more than 3 hours continuously.
 
-The whole run, from fetching data to the watchdog, is drawn in the [decision pipeline diagram]({{ site.baseurl }}/strom-decision-diagram.html).
+The whole run, from fetching data to the watchdog, is drawn in the [decision pipeline diagram]({{ site.baseurl }}/strom-decision-diagram.html){: data-turbo="false" }.
 
 ## Key features
 
