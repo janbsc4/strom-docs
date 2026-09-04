@@ -129,6 +129,7 @@ description: >-
     <div class="hero-actions">
       <a class="button button-primary" href="{{ site.baseurl }}/getting-started">Read the guide</a>
       <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Star on GitHub</a>
+      <a class="button button-ghost" href="{{ site.baseurl }}/strom-decision-diagram.html">See the decision diagram</a>
     </div>
   </div>
 </section>
