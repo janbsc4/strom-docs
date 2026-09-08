@@ -1,6 +1,5 @@
-This favicon was generated using the following font:
-
-- Font Title: Leckerli One
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/leckerlione/v20/V8mCoQH8VCsNttEnxnGQ-1itLZxcBtItFw.ttf
-- Font License: undefined)
+Strom Little Radiator icon. Generated with the built-in image generation tool.
+Original transparent 1254 x 1254 PNG: ../images/strom-radiator-original.png
+Desktop source: Bloodwing1/Strom, strom/linux_gui/assets/.
+Favicon and touch-icon files are downscaled from the unchanged original.
+The legacy favicon-src SVG files are historical, not the current source.

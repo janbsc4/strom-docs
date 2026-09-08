@@ -17,6 +17,9 @@ image:
 <section class="hero">
   <div class="wrapper">
     <div class="hero-copy">
+      <img class="hero-app-icon" src="{{ '/assets/images/strom-radiator-256.png' | relative_url }}"
+        srcset="{{ '/assets/images/strom-radiator-512.png' | relative_url }} 2x"
+        width="128" height="128" alt="Icono de la aplicación Strom: un pequeño radiador" fetchpriority="high">
       <span class="eyebrow">Calefacción inteligente de código abierto</span>
       <h1 class="hero-title">Calienta cuando la luz es barata.</h1>
       <p class="hero-sub">
@@ -40,8 +43,9 @@ image:
     <div class="section-head reveal">
       <span class="eyebrow">Cómo funciona una ejecución</span>
       <h2>Cuatro pasos, una vez por hora</h2>
-      <p>Strom es un simple script de Python. Apúntalo a un enchufe inteligente, dale dos
-      claves de API y deja que cron lo llame cada hora. Cada ejecución hace lo mismo:</p>
+      <p>Strom ofrece una aplicación de escritorio para Linux que ejecuta un ciclo de
+      calefacción y un comando de Python que puedes programar cada hora con cron.
+      Cada ejecución hace lo mismo:</p>
     </div>
     <ol class="steps" data-stagger>
       <li class="reveal">
@@ -59,9 +63,9 @@ image:
       <li class="reveal">
         <span class="step-no">03</span>
         <h3>Optimizar</h3>
-        <p>La optimización convexa encuentra el calendario de calefacción más barato
-        posible para las próximas 24 horas —lo demuestra, no lo estima—, siempre dentro
-        de tu banda de confort (18&ndash;24&nbsp;&deg;C por defecto).</p>
+        <p>Un optimizador busca un plan de calefacción de bajo coste para las próximas
+        24 horas, manteniendo la temperatura prevista por el modelo dentro de tu
+        banda de confort (18&ndash;24&nbsp;&deg;C por defecto).</p>
       </li>
       <li class="reveal">
         <span class="step-no">04</span>
@@ -110,9 +114,9 @@ image:
       <li class="reveal">
         <span class="need-icon">imprescindible</span>
         <h3>Un enchufe inteligente</h3>
-        <p>Hoy, un TP-Link Kasa: cualquier modelo de tu red vale, y su IP va en un archivo
-        de configuración. ¿No tienes ninguno? Strom es código abierto — haz un fork y
-        adáptalo a tu hardware.</p>
+        <p>Un enchufe TP-Link compatible en tu red, controlado mediante python-kasa.
+        Necesitas su dirección IP y los datos de tu cuenta. La compatibilidad
+        depende del modelo y del firmware.</p>
       </li>
       <li class="reveal">
         <span class="need-icon">imprescindible</span>

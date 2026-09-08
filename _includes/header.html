@@ -36,9 +36,9 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13.6 1.6 4.2 13.4c-.4.5 0 1.3.7 1.3h5l-1.7 7.5c-.2.8.9 1.3 1.4.6l9.4-11.8c.4-.5 0-1.3-.7-1.3h-5l1.7-7.5c.2-.8-.9-1.3-1.4-.6Z" fill="#f2a33c"/>
-      </svg>
+      <img class="brand-icon" src="{{ '/assets/images/strom-radiator-64.png' | relative_url }}"
+        srcset="{{ '/assets/images/strom-radiator-128.png' | relative_url }} 2x"
+        width="36" height="36" alt="">
       <span>{{ site.title | escape }}</span>
     </a>
 

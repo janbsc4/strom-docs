@@ -240,7 +240,7 @@ blockquote {
   color: var(--heat-soft);
 }
 
-.site-title svg {
+.brand-icon {
   display: block;
 }
 
@@ -604,6 +604,13 @@ blockquote {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
   min-height: calc(100vh - 3.75rem);
+}
+
+.hero-app-icon {
+  display: block;
+  width: clamp(88px, 10vw, 128px);
+  height: auto;
+  margin-bottom: 1.25rem;
 }
 
 .hero-copy .eyebrow {

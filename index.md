@@ -11,6 +11,9 @@ description: >-
 <section class="hero">
   <div class="wrapper">
     <div class="hero-copy">
+      <img class="hero-app-icon" src="{{ '/assets/images/strom-radiator-256.png' | relative_url }}"
+        srcset="{{ '/assets/images/strom-radiator-512.png' | relative_url }} 2x"
+        width="128" height="128" alt="Strom’s Little Radiator app icon" fetchpriority="high">
       <span class="eyebrow">Open-source smart heating</span>
       <h1 class="hero-title">Heat when power is cheap.</h1>
       <p class="hero-sub">
@@ -34,8 +37,8 @@ description: >-
     <div class="section-head reveal">
       <span class="eyebrow">How a run works</span>
       <h2>Four steps, once an hour</h2>
-      <p>Strom is a plain Python script. Point it at a smart plug, give it two API keys, and
-      let cron call it every hour. Each run does the same thing:</p>
+      <p>Strom offers a Linux desktop app for running one heating cycle, plus a Python
+      command you can schedule hourly with cron. Each run does the same thing:</p>
     </div>
     <ol class="steps" data-stagger>
       <li class="reveal">
@@ -53,8 +56,9 @@ description: >-
       <li class="reveal">
         <span class="step-no">03</span>
         <h3>Optimize</h3>
-        <p>Convex optimization finds the provably cheapest heating schedule for the next 24
-        hours that stays inside your comfort band (18&ndash;24&nbsp;&deg;C by default).</p>
+        <p>An optimizer finds a low-cost heating schedule for the next 24 hours while
+        keeping the model’s predicted temperature within your comfort band
+        (18&ndash;24&nbsp;&deg;C by default).</p>
       </li>
       <li class="reveal">
         <span class="step-no">04</span>
@@ -102,9 +106,9 @@ description: >-
       <li class="reveal">
         <span class="need-icon">requires</span>
         <h3>A smart plug</h3>
-        <p>Today that means any TP-Link Kasa plug on your network; its IP address goes in
-        one config file. No Kasa at home? Strom is open source — fork it and adapt it to
-        your hardware.</p>
+        <p>A compatible TP-Link plug on your network, controlled through python-kasa.
+        You provide its IP address and account details. Support depends on your
+        plug model and firmware.</p>
       </li>
       <li class="reveal">
         <span class="need-icon">requires</span>
