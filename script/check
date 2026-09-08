@@ -5,8 +5,11 @@ cd "$(dirname "$0")/.."
 echo "==> Front matter"
 ruby script/check-front-matter
 
+check_dir=$(mktemp -d "${TMPDIR:-/tmp}/strom-docs-check.XXXXXX")
+trap 'rm -rf "$check_dir"' EXIT HUP INT TERM
+
 echo "==> Jekyll build (baseurl stripped so internal links resolve on disk)"
-bundle exec jekyll build --baseurl "" --strict_front_matter
+bundle exec jekyll build --baseurl "" --strict_front_matter --destination "$check_dir"
 
 echo "==> html-proofer (internal links, images, alt text)"
-bundle exec htmlproofer ./_site --disable-external
+bundle exec htmlproofer "$check_dir" --disable-external

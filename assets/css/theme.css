@@ -1,0 +1,56 @@
+/* Shared visual language for the landing page and documentation. */
+:root {
+  --paper: #f7f5ef;
+  --text: #292b26;
+  --slate: #63665d;
+  --line: #dddfd3;
+  --ink: #242b25;
+  --ink-2: #2b342d;
+  --ink-3: #414b40;
+  --heat: #f5b544;
+  --heat-soft: #f6ce87;
+  --ember: #805317;
+  --ice: #bac7bb;
+  --ice-dim: #9aa998;
+}
+.site-header { background: var(--paper); color: var(--text); border-bottom: 1px solid var(--line); }
+.site-title, .site-nav .page-link { color: var(--text); }
+.site-title:hover { color: var(--ember); }
+.brand-icon { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+.site-nav .page-link:hover { color: var(--ember); background: #eceee4; }
+.site-nav .page-link.is-active { background: #eee4cd; color: var(--text); }
+a:focus-visible { outline: 3px solid #ad791d; outline-offset: 5px; }
+.site-footer .footer-meta { color: var(--ice); }
+.docs-page .page-content { padding-top: 3.5rem; padding-bottom: 5rem; }
+.docs-page .post-header { padding-bottom: 2rem; margin-bottom: 2rem; }
+.docs-page .post-title { font-size: clamp(2.5rem, 4.5vw, 3.8rem); line-height: 1.07; letter-spacing: -.045em; }
+.docs-page .post-header .eyebrow { margin-bottom: 1rem; font-size: .72rem; letter-spacing: .13em; }
+.docs-page .sidebar-heading { font-size: .7rem; letter-spacing: .13em; }
+.docs-page .sidebar-content ol li a { padding-top: .65rem; padding-bottom: .65rem; }
+.docs-page .sidebar-content ol li a .num { color: var(--slate); }
+.docs-page .sidebar-content ol li a.is-active { background: #eee4cd; border-left-color: var(--ember); }
+.docs-page .sidebar-content ol li a.is-active .num { color: var(--ember); }
+.docs-page .post-content { font-size: 1.03rem; }
+.docs-page .post-content h2 { font-size: clamp(1.6rem, 2.8vw, 2rem); letter-spacing: -.03em; }
+.docs-page .post-content h3 { font-size: 1.3rem; letter-spacing: -.015em; }
+.docs-page .post-content pre { border-radius: 10px; padding: 1.2rem 1.4rem; }
+.docs-page .post-content code { background: #eceee4; }
+.docs-page .post-content pre code { background: transparent; }
+.docs-page .post-content tbody tr:nth-child(even) { background: #f7f5ef; }
+.docs-page .post-nav { align-items: stretch; gap: 1.25rem; }
+.docs-page .post-nav > a, .docs-page .post-nav > span { flex: 1; max-width: 50%; }
+.docs-page .post-nav a { border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.2rem; }
+.docs-page .post-nav .next a { display: flex; max-width: none; height: 100%; }
+.docs-page .post-nav a:hover { background: #eceee4; border-color: #c4c8b9; }
+@media (max-width: 899px) {
+  .docs-page .page-content { padding-top: 2rem; }
+  .docs-page .sidebar-content { border-top: 0; }
+  .docs-page .sidebar-content ol li a { border-radius: 8px; padding: .5rem .8rem; background: transparent; }
+  .docs-page .post-header { margin-top: .75rem; }
+}
+@media (max-width: 559px) {
+  .docs-page .post-nav a { padding: .8rem; }
+  .docs-page .post-nav a .label { font-size: .9rem; }
+}
+.site-nav .page-link.lang-switch { color: var(--ember); border-color: #d8c49e; }
+.site-nav .page-link.nav-github:hover { color: var(--ember); border-color: var(--ember); }
