@@ -5,8 +5,8 @@ ref: home
 title: Calefacción inteligente
 description: >-
   Calefacción inteligente de código abierto: Strom lee los precios del
-  mercado day-ahead y la previsión del tiempo, y calienta en las horas más
-  baratas sin pasar frío.
+  mercado eléctrico y la previsión del tiempo para planificar la calefacción
+  con un enchufe inteligente.
 image:
   path: /assets/images/og-image-es.png
   alt: >-
@@ -17,24 +17,28 @@ image:
 <section class="hero">
   <div class="wrapper">
     <div class="hero-copy">
-      <img class="hero-app-icon" src="{{ '/assets/images/strom-radiator-256.png' | relative_url }}"
-        srcset="{{ '/assets/images/strom-radiator-512.png' | relative_url }} 2x"
-        width="128" height="128" alt="Icono de la aplicación Strom: un pequeño radiador" fetchpriority="high">
       <span class="eyebrow">Calefacción inteligente de código abierto</span>
-      <h1 class="hero-title">Calienta cuando la luz es barata.</h1>
-      <p class="hero-sub">
-        Cada día el mercado eléctrico publica los precios de mañana, hora a hora.
-        <strong>Strom lee la curva, mira el tiempo y pone tu calefacción en las horas
-        baratas</strong> — automáticamente, con un enchufe inteligente.
-      </p>
+      <h1 class="hero-title">Más calor.<br><em>Menos gasto.</em></h1>
+      <p class="hero-sub">Strom combina los precios de la luz y la previsión del tiempo para planificar tu calefacción. Tu radiador, un enchufe inteligente y las horas más baratas.</p>
       <div class="hero-actions">
         <a class="button button-primary" href="{{ site.baseurl }}/es/primeros-pasos">Leer la guía</a>
         <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Ver en GitHub</a>
       </div>
     </div>
-    <div class="hero-chart">
-      {%- include hero-chart.html -%}
+    <div class="hero-art">
+      <span class="orbit orbit-one" aria-hidden="true"></span>
+      <span class="orbit orbit-two" aria-hidden="true"></span>
+      <img class="hero-app-icon" src="{{ '/assets/images/strom-radiator-512.png' | relative_url }}"
+        width="512" height="512" alt="El pequeño radiador de Strom" fetchpriority="high">
+      <p class="art-caption">Un pequeño radiador. Un plan más inteligente.</p>
     </div>
+  </div>
+</section>
+
+<section class="timing-section">
+  <div class="wrapper timing-grid">
+    <div><span class="eyebrow">La idea es sencilla</span><h2>El mismo calor.<br>En el momento adecuado.</h2><p>El precio de la electricidad cambia cada hora. Strom busca un plan de bajo coste que mantenga la temperatura prevista dentro de tu banda de confort.</p></div>
+    <div class="hero-chart">{%- include hero-chart.html -%}<p class="chart-note">Ejemplo ilustrativo · no son precios en directo</p></div>
   </div>
 </section>
 
@@ -42,7 +46,7 @@ image:
   <div class="wrapper">
     <div class="section-head reveal">
       <span class="eyebrow">Cómo funciona una ejecución</span>
-      <h2>Cuatro pasos, una vez por hora</h2>
+      <h2>Una rutina inteligente en cada ejecución</h2>
       <p>Strom ofrece una aplicación de escritorio para Linux que ejecuta un ciclo de
       calefacción y un comando de Python que puedes programar cada hora con cron.
       Cada ejecución hace lo mismo:</p>
@@ -57,7 +61,7 @@ image:
       <li class="reveal">
         <span class="step-no">02</span>
         <h3>Obtener datos</h3>
-        <p>Los precios day-ahead de mañana desde ENTSO-E y la previsión meteorológica de
+        <p>Los precios horarios de electricidad desde ENTSO-E y la previsión meteorológica de
         OpenWeatherMap. Si falta un dato, la ejecución se detiene: no se inventa nada.</p>
       </li>
       <li class="reveal">
@@ -81,7 +85,7 @@ image:
 <section class="section savings">
   <div class="wrapper">
     <div class="reveal">
-      <span class="eyebrow">Medido, no prometido</span>
+      <span class="eyebrow">El caso de estudio de Barcelona</span>
       <h2>Lo que ahorra</h2>
       <p class="savings-figure"><span class="count" data-count-to="17">17</span>% <small>menos de gasto en calefacción en dos años
       que con un termostato constante — 66&nbsp;&euro; en nuestro caso de estudio en
@@ -107,12 +111,6 @@ image:
     <ul class="need" data-stagger>
       <li class="reveal">
         <span class="need-icon">imprescindible</span>
-        <h3>Python 3.12</h3>
-        <p>Strom requiere la serie 3.12. Con mise, la versión correcta se instala
-        automáticamente.</p>
-      </li>
-      <li class="reveal">
-        <span class="need-icon">imprescindible</span>
         <h3>Un enchufe inteligente</h3>
         <p>Un enchufe TP-Link compatible en tu red, controlado mediante python-kasa.
         Necesitas su dirección IP y los datos de tu cuenta. La compatibilidad
@@ -124,12 +122,6 @@ image:
         <p>Una de <a href="https://openweathermap.org/appid">OpenWeatherMap</a> y otra de
         <a href="https://transparency.entsoe.eu/">ENTSO-E</a>. Ambas tienen nivel gratuito.</p>
       </li>
-      <li class="reveal">
-        <span class="need-icon">opcional</span>
-        <h3>Los números de tu casa</h3>
-        <p>Aislamiento, potencia de la calefacción, banda de confort. Si lo omites, se
-        usan valores por defecto razonables para una vivienda familiar.</p>
-      </li>
     </ul>
   </div>
 </section>
@@ -140,7 +132,7 @@ image:
     <p>Clona, configura, añade una línea al cron. La guía te acompaña en cada paso.</p>
     <div class="hero-actions">
       <a class="button button-primary" href="{{ site.baseurl }}/es/primeros-pasos">Leer la guía</a>
-      <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Dale una estrella en GitHub</a>
+      <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Ver en GitHub</a>
     </div>
   </div>
 </section>

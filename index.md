@@ -5,30 +5,34 @@ ref: home
 title: Heat when power is cheap
 description: >-
   Open-source smart heating: Strom reads day-ahead electricity prices and the
-  weather forecast, then heats through the cheapest safe hours.
+  weather forecast to plan lower-cost heating through a smart plug.
 ---
 
 <section class="hero">
   <div class="wrapper">
     <div class="hero-copy">
-      <img class="hero-app-icon" src="{{ '/assets/images/strom-radiator-256.png' | relative_url }}"
-        srcset="{{ '/assets/images/strom-radiator-512.png' | relative_url }} 2x"
-        width="128" height="128" alt="Strom’s Little Radiator app icon" fetchpriority="high">
       <span class="eyebrow">Open-source smart heating</span>
-      <h1 class="hero-title">Heat when power is cheap.</h1>
-      <p class="hero-sub">
-        Every day the electricity market publishes tomorrow's prices, hour by hour.
-        <strong>Strom reads the curve, checks the weather, and runs your heater through the
-        cheapest safe hours</strong> — automatically, through a smart plug.
-      </p>
+      <h1 class="hero-title">A warmer home.<br><em>A smarter bill.</em></h1>
+      <p class="hero-sub">Strom brings electricity prices and weather forecasts together to plan your heating. Your radiator, a smart plug, and better timing.</p>
       <div class="hero-actions">
         <a class="button button-primary" href="{{ site.baseurl }}/getting-started">Read the guide</a>
         <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">View on GitHub</a>
       </div>
     </div>
-    <div class="hero-chart">
-      {%- include hero-chart.html -%}
+    <div class="hero-art">
+      <span class="orbit orbit-one" aria-hidden="true"></span>
+      <span class="orbit orbit-two" aria-hidden="true"></span>
+      <img class="hero-app-icon" src="{{ '/assets/images/strom-radiator-512.png' | relative_url }}"
+        width="512" height="512" alt="Strom’s Little Radiator" fetchpriority="high">
+      <p class="art-caption">A little radiator. A smarter plan.</p>
     </div>
+  </div>
+</section>
+
+<section class="timing-section">
+  <div class="wrapper timing-grid">
+    <div><span class="eyebrow">A simple idea</span><h2>Same warmth.<br>Better timing.</h2><p>Electricity prices change by the hour. Strom finds a low-cost heating plan that keeps the predicted temperature within your comfort band.</p></div>
+    <div class="hero-chart">{%- include hero-chart.html -%}<p class="chart-note">Illustrative schedule · not live prices</p></div>
   </div>
 </section>
 
@@ -36,7 +40,7 @@ description: >-
   <div class="wrapper">
     <div class="section-head reveal">
       <span class="eyebrow">How a run works</span>
-      <h2>Four steps, once an hour</h2>
+      <h2>A thoughtful routine, every run</h2>
       <p>Strom offers a Linux desktop app for running one heating cycle, plus a Python
       command you can schedule hourly with cron. Each run does the same thing:</p>
     </div>
@@ -50,7 +54,7 @@ description: >-
       <li class="reveal">
         <span class="step-no">02</span>
         <h3>Fetch</h3>
-        <p>Tomorrow's day-ahead prices from ENTSO-E and the weather forecast from
+        <p>Hourly electricity prices from ENTSO-E and the weather forecast from
         OpenWeatherMap. Missing data stops the run — nothing is invented.</p>
       </li>
       <li class="reveal">
@@ -73,7 +77,7 @@ description: >-
 <section class="section savings">
   <div class="wrapper">
     <div class="reveal">
-      <span class="eyebrow">Measured, not promised</span>
+      <span class="eyebrow">The Barcelona case study</span>
       <h2>What it saves</h2>
       <p class="savings-figure"><span class="count" data-count-to="17">17</span>% <small>lower heating cost over two years than a constant
       thermostat &mdash; 66&nbsp;&euro; in our Barcelona case study, with the same comfort
@@ -99,12 +103,6 @@ description: >-
     <ul class="need" data-stagger>
       <li class="reveal">
         <span class="need-icon">requires</span>
-        <h3>Python 3.12</h3>
-        <p>Strom is pinned to the 3.12 series. With mise, the right version is provisioned
-        automatically.</p>
-      </li>
-      <li class="reveal">
-        <span class="need-icon">requires</span>
         <h3>A smart plug</h3>
         <p>A compatible TP-Link plug on your network, controlled through python-kasa.
         You provide its IP address and account details. Support depends on your
@@ -116,12 +114,6 @@ description: >-
         <p>One for <a href="https://openweathermap.org/appid">OpenWeatherMap</a>, one for
         <a href="https://transparency.entsoe.eu/">ENTSO-E</a>. Both have free tiers.</p>
       </li>
-      <li class="reveal">
-        <span class="need-icon">optional</span>
-        <h3>Your house numbers</h3>
-        <p>Insulation, heater power, comfort band. Skip it and sensible defaults for a family
-        home are used.</p>
-      </li>
     </ul>
   </div>
 </section>
@@ -132,8 +124,7 @@ description: >-
     <p>Clone, configure, add one cron line. The guide walks through every step.</p>
     <div class="hero-actions">
       <a class="button button-primary" href="{{ site.baseurl }}/getting-started">Read the guide</a>
-      <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">Star on GitHub</a>
-      <a class="button button-ghost" href="{{ site.baseurl }}/strom-decision-diagram.html" data-turbo="false">See the decision diagram</a>
+      <a class="button button-ghost" href="https://github.com/{{ site.github_username }}">See on GitHub</a>
     </div>
   </div>
 </section>
