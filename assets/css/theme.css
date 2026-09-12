@@ -15,6 +15,8 @@
 }
 .site-header { background: var(--paper); color: var(--text); border-bottom: 1px solid var(--line); }
 .site-title, .site-nav .page-link { color: var(--text); }
+.site-title { font-weight: 700; letter-spacing: -.035em; }
+.site-nav .page-link { border-radius: 6px; }
 .site-title:hover { color: var(--ember); }
 .brand-icon { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
 .site-nav .page-link:hover { color: var(--ember); background: #eceee4; }
@@ -23,7 +25,7 @@ a:focus-visible { outline: 3px solid #ad791d; outline-offset: 5px; }
 .site-footer .footer-meta { color: var(--ice); }
 .docs-page .page-content { padding-top: 3.5rem; padding-bottom: 5rem; }
 .docs-page .post-header { padding-bottom: 2rem; margin-bottom: 2rem; }
-.docs-page .post-title { font-size: clamp(2.5rem, 4.5vw, 3.8rem); line-height: 1.07; letter-spacing: -.045em; }
+.docs-page .post-title { font-size: clamp(2.3rem, 4.2vw, 3.5rem); line-height: 1.15; letter-spacing: -.035em; }
 .docs-page .post-header .eyebrow { margin-bottom: 1rem; font-size: .72rem; letter-spacing: .13em; }
 .docs-page .sidebar-heading { font-size: .7rem; letter-spacing: .13em; }
 .docs-page .sidebar-content ol li a { padding-top: .65rem; padding-bottom: .65rem; }
@@ -31,7 +33,7 @@ a:focus-visible { outline: 3px solid #ad791d; outline-offset: 5px; }
 .docs-page .sidebar-content ol li a.is-active { background: #eee4cd; border-left-color: var(--ember); }
 .docs-page .sidebar-content ol li a.is-active .num { color: var(--ember); }
 .docs-page .post-content { font-size: 1.03rem; }
-.docs-page .post-content h2 { font-size: clamp(1.6rem, 2.8vw, 2rem); letter-spacing: -.03em; }
+.docs-page .post-content h2 { font-size: clamp(1.6rem, 2.8vw, 2rem); letter-spacing: -.025em; }
 .docs-page .post-content h3 { font-size: 1.3rem; letter-spacing: -.015em; }
 .docs-page .post-content pre { border-radius: 10px; padding: 1.2rem 1.4rem; }
 .docs-page .post-content code { background: #eceee4; }

@@ -20,7 +20,7 @@
   --line-dark: rgba(159, 180, 201, 0.16);
 
   /* Type */
-  --font-display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Manrope", "IBM Plex Sans", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
@@ -85,11 +85,11 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--ink);
   overflow-wrap: break-word;
-  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 p, blockquote, pre, ul, ol, dl, figure, table {
@@ -621,7 +621,7 @@ blockquote {
 
 .hero-title {
   font-size: clamp(2.2rem, 3.6vw, 2.95rem);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.06;
   color: #f5f8fb;
@@ -873,7 +873,7 @@ blockquote {
 
 .savings .savings-figure {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 600;
   font-size: clamp(2.6rem, 5vw, 3.4rem);
   color: var(--heat);
   line-height: 1;
